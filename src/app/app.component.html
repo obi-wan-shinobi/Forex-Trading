@@ -1,20 +1,7 @@
-<button (click)="setNews()" class="btn btn-primary" type="button" name="button">News</button>
-<div class="container" *ngIf="news_value">
-
-    <div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
-
-      <span class="source-name"> {{source.name}}</span>
-
-    </div>
-    <div class="example-card"  *ngFor="let article of mArticles">
-      <div>
-        <div mat-card-avatar [ngStyle]="{'background-image': 'url(../assets/images/'+ article.source.id +'.png)'}" class="example-header-image"></div>
-        <div class="title">{{article.title}}</div>
-        <div>{{article.source.name}}</div>
-      </div>
-      <div>
-        <p>
-          {{article.description}}
-        </p>
-      </div>
-</div>
+  <button (click)="setNews()" class="btn btn-primary" type="button" name="button">News</button>
+  <div class="container" *ngIf="news_value">
+    <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" routerLink='/news'>News</a>
+  </nav>
+  </div>
+<router-outlet></router-outlet>
