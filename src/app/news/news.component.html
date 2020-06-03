@@ -1,5 +1,5 @@
 <div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
-    <button type="button" name="button" class="btn btn-secondary">{{source.name}}</button>
+    <button type="button" name="button" class="btn btn-secondary" style="width=50px; height=50px;">{{source.name}}</button>
 </div>
 <div *ngFor="let article of mArticles">
   <div class="title">{{article.title}}</div>
