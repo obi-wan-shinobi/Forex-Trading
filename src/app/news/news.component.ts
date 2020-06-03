@@ -7,7 +7,10 @@ import { NewsApiService } from '../news-api.service';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
-
+  isShow = true;
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
   mArticles:Array<any>;
   mSources:Array<any>;
 
