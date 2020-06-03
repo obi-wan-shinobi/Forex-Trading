@@ -1,0 +1,10 @@
+<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
+    <button type="button" name="button" class="btn btn-secondary">{{source.name}}</button>
+</div>
+<div *ngFor="let article of mArticles">
+  <div class="title">{{article.title}}</div>
+  <div>{{article.source.name}}</div>
+  <p>
+    {{article.description}}
+  </p>
+</div>
