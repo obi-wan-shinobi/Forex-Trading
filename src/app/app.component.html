@@ -4,4 +4,10 @@
     <a class="navbar-brand" routerLink='/news'>News</a>
   </nav>
   </div>
+  <button (click)="setTradingView()" class="btn btn-primary" type="button" name="button">TradingView</button>
+  <div class="container" *ngIf="trade">
+    <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" routerLink='/tradingview'>TradingView</a>
+  </nav>
+  </div>
 <router-outlet></router-outlet>

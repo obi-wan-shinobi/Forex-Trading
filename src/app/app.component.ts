@@ -9,9 +9,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   public news_value = false;
+  public trade = false;
   constructor(){ }
 
   setNews() {
     return this.news_value = true;
+  }
+
+  setTradingView() {
+    return this.trade = true;
   }
 }
