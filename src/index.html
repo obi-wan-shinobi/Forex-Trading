@@ -6,45 +6,47 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+
   <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <!-- <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView</div> -->
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-  {
-  "symbols": [
-    {
-      "proName": "FOREXCOM:SPXUSD",
-      "title": "S&P 500"
-    },
-    {
-      "proName": "FOREXCOM:NSXUSD",
-      "title": "Nasdaq 100"
-    },
-    {
-      "proName": "FX_IDC:EURUSD",
-      "title": "EUR/USD"
-    },
-    {
-      "proName": "BITSTAMP:BTCUSD",
-      "title": "BTC/USD"
-    },
-    {
-      "proName": "BITSTAMP:ETHUSD",
-      "title": "ETH/USD"
-    }
-  ],
-  "colorTheme": "light",
-  "isTransparent": false,
-  "displayMode": "adaptive",
-  "locale": "in"
-}
-  </script>
-</div>
-<!-- TradingView Widget END -->
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <!-- <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView</div> -->
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+        {
+          "proName": "FOREXCOM:SPXUSD",
+          "title": "S&P 500"
+        },
+        {
+          "proName": "FOREXCOM:NSXUSD",
+          "title": "Nasdaq 100"
+        },
+        {
+          "proName": "FX_IDC:EURUSD",
+          "title": "EUR/USD"
+        },
+        {
+          "proName": "BITSTAMP:BTCUSD",
+          "title": "BTC/USD"
+        },
+        {
+          "proName": "BITSTAMP:ETHUSD",
+          "title": "ETH/USD"
+        }
+        ],
+        "colorTheme": "light",
+        "isTransparent": false,
+        "displayMode": "adaptive",
+        "locale": "in"
+      }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
 </head>
 <body>
   <app-root></app-root>
@@ -53,43 +55,42 @@
     <div class="tradingview-widget-container">
       <div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
-      {
-      "width": 840,
-      "height": 400,
-      "currencies": [
-        "EUR",
-        "USD",
-        "JPY",
-        "GBP",
-        "CHF",
-        "AUD",
-        "CAD",
-        "NZD",
-        "CNY",
-        "INR"
-      ],
-      "isTransparent": true,
-      "colorTheme": "light",
-      "locale": "in"
-    }
+        {
+          "width": 840,
+          "height": 400,
+          "currencies": [
+          "EUR",
+          "USD",
+          "JPY",
+          "GBP",
+          "CHF",
+          "AUD",
+          "CAD",
+          "NZD",
+          "CNY",
+          "INR"
+          ],
+          "isTransparent": true,
+          "colorTheme": "light",
+          "locale": "in"
+        }
       </script>
     </div>
-
     <h1>Screener</h1>
     <div class="tradingview-widget-container">
       <div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-      {
-      "width": 1100,
-      "height": 512,
-      "defaultColumn": "overview",
-      "defaultScreen": "top_gainers",
-      "market": "forex",
-      "showToolbar": true,
-      "colorTheme": "light",
-      "locale": "in",
-      "isTransparent": true
-    }
+        {
+          "width": 1100,
+          "height": 512,
+          "defaultColumn": "overview",
+          "defaultScreen": "top_gainers",
+          "market": "forex",
+          "showToolbar": true,
+          "colorTheme": "light",
+          "locale": "in",
+          "isTransparent": true
+        }
       </script>
     </div>
   </div>
