@@ -1,14 +1,26 @@
-<br>
-<button class="btn btn-primary" style="width:10%;" (click) = toggleDisplay()>Toggle</button>
-<div *ngIf = "!isShow">
-	<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
-		<button type="button" name="button" class="btn btn-secondary" style="width: 10%; text-align: left;">{{source.name}}</button>	
+<div class="form-group row">
+	<div class="col-lg-3" style=" margin-top: 10px; align-content: top;">
+		<button class="btn" style="width:100%;" (click) = toggleDisplay()><strong>News Sources</strong></button>
+		<div *ngIf = "!isShow">
+			<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
+				<button type="button" name="button" class="btn" style="width: 100%; text-align: left;">{{source.name}}</button>	
+			</div>
+		</div>
 	</div>
-</div>
- 
-<div *ngFor="let article of mArticles">
-  	<div class="title">{{article.title}}</div>
-  	<div>{{article.source.name}}</div>
-    <p>{{article.description}}</p>
-  	<a href ="{{article.url}}">Read more</a>
+	<div class="col-lg-3" style="margin-left: 150px;">
+
+		<div *ngFor="let article of mArticles">
+			&nbsp;
+		<div class="card text-center">
+	        <div class="card-body">	
+		            <h3>{{article.title}}</h3>
+		            <hr/>
+		            {{article.description}}
+		            <p align="center">
+		            <a href="{{article.url}}" class="btn" style="background-color: green;">Read Full News</a>
+		        	</p>
+		    </div>
+		</div>
+		</div>
+	</div>
 </div>
