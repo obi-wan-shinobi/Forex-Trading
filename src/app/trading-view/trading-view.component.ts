@@ -20,7 +20,7 @@ export class TradingviewComponent implements OnInit, AfterViewInit {
       {
       "width": 980,
       "height": 610,
-      "symbol": "NASDAQ:AAPL",
+      "symbol": "FX:EURUSD",
       "timezone": "Etc/UTC",
       "theme": "Light",
       "style": "1",
