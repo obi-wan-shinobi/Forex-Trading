@@ -14,7 +14,7 @@ export class ForexapiComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.forex.latestRates().subscribe(data => this.data = data);
+    this.forex.latestRates().subscribe(data => this.data = data['timestamp']);
 
     console.log('Data:', this.data)
   }
