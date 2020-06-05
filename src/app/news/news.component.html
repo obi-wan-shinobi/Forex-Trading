@@ -1,6 +1,5 @@
-<div>
-	<a class="btn btn:hover" type="button" name="button" (click)="goHome()">Home</a>
-	<button class="btn" style="width:10%;" (click) = toggleDisplay()><strong>News Sources</strong></button>
+<div style="padding-top: 2em;">
+	<button class="btn" style="width:10%;" (click) = toggleDisplay()>News Sources</button>
 </div>
 <div class="form-group row">
 	<div class="col-lg-3" style=" margin-top: 10px; align-content: top;">
@@ -11,7 +10,7 @@
 		</div>
 	</div>
 	<div class="col-lg-3" style="margin-left: 150px;">
-
+		<h1>News:</h1>
 		<div *ngFor="let article of mArticles">
 			&nbsp;
 		<div class="card text-center">
