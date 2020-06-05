@@ -7,7 +7,7 @@ import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular
 })
 export class ForexCrossRatesComponent implements AfterViewInit {
 
-  @Input() symbol: string = "default";
+  symbol: string = "forex-cross-rates";
   settings: any = {};
   widgetId: string = '';
 
@@ -34,19 +34,39 @@ export class ForexCrossRatesComponent implements AfterViewInit {
         );
       }
 
+      // this.settings = {
+      //    symbol: this.symbol,
+      //    colorTheme: 'light',
+      //    isTransparent: false,
+      //    largeChartUrl: '',
+      //    displayMode: 'regular',
+      //    height: 300,
+      //    autosize: true,
+      //    locale: 'en',
+      //  };
+
       this.settings = {
-        symbol: this.symbol,
-        colorTheme: 'light',
-        isTransparent: 'false',
-        largeChartUrl: '',
-        displayMode: 'regular',
-        height: 300,
-        autosize: false,
-        locale: 'in',
+        "width": 840,
+        "height": 400,
+        "currencies": [
+          "EUR",
+          "USD",
+          "JPY",
+          "GBP",
+          "CHF",
+          "AUD",
+          "CAD",
+          "NZD",
+          "CNY",
+          "INR"
+        ],
+        "isTransparent:": false,
+        "colorTheme": "light",
+        "locale": "in"
       };
 
       const script = document.createElement( 'script' );
-      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-financials.js';
+      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js';
       script.async = true;
       script.id = this.widgetId;
       script.innerHTML = JSON.stringify( this.settings );
@@ -60,25 +80,5 @@ export class ForexCrossRatesComponent implements AfterViewInit {
            </div>
       `
     } );
-  //   forexcrossrates: {
-  //     "width": 840,
-  //     "height": 400,
-  //     "currencies": [
-  //       "EUR",
-  //       "USD",
-  //       "JPY",
-  //       "GBP",
-  //       "CHF",
-  //       "AUD",
-  //       "CAD",
-  //       "NZD",
-  //       "CNY",
-  //       "INR"
-  //     ],
-  //     "isTransparent": true,
-  //     "colorTheme": "light",
-  //     "locale": "in"
-  //   };
-  // }
 }
 }
