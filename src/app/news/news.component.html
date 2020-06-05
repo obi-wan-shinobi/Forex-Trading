@@ -1,5 +1,5 @@
 <div class="form-group row">
-	<div class="col-lg-3" style=" margin-top: 10px; align-content: top;">
+	<div class="col-lg-3" style=" margin-top: 10px;">
 		<button class="btn" style="width:100%;" (click) = toggleDisplay()><strong>News Sources</strong></button>
 		<div *ngIf = "!isShow">
 			<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
@@ -8,7 +8,7 @@
 		</div>
 	</div>
 	<div class="col-lg-3" style="margin-left: 150px;">
-
+		<h1>News:</h1>
 		<div *ngFor="let article of mArticles">
 			&nbsp;
 		<div class="card text-center">
