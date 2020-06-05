@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsApiService } from '../news-api.service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-news',
@@ -14,7 +15,7 @@ export class NewsComponent implements OnInit {
   mArticles:Array<any>;
   mSources:Array<any>;
 
-  constructor(private newsapi:NewsApiService) {
+  constructor(private newsapi:NewsApiService, private router: Router) {
     console.log('News component constructor called');
   }
 
@@ -30,5 +31,9 @@ export class NewsComponent implements OnInit {
     console.log("selected source is: "+source);
     this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data['articles']);
   }
+
+  // goHome() {
+  //   this.router.navigate(['/']);
+  // }
 
 }

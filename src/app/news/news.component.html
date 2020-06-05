@@ -1,9 +1,11 @@
+<div style="padding-top: 2em;">
+	<button class="btn" style="width:10%;" (click) = toggleDisplay()>News Sources</button>
+</div>
 <div class="form-group row">
-	<div class="col-lg-3" style=" margin-top: 10px;">
-		<button class="btn" style="width:100%;" (click) = toggleDisplay()><strong>News Sources</strong></button>
+	<div class="col-lg-3" style=" margin-top: 10px; align-content: top;">
 		<div *ngIf = "!isShow">
 			<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
-				<button type="button" name="button" class="btn" style="width: 100%; text-align: left;">{{source.name}}</button>	
+				<button type="button" name="button" class="btn" style="width: 100%; text-align: left;">{{source.name}}</button>
 			</div>
 		</div>
 	</div>
@@ -12,7 +14,7 @@
 		<div *ngFor="let article of mArticles">
 			&nbsp;
 		<div class="card text-center">
-	        <div class="card-body">	
+	        <div class="card-body">
 		            <h3>{{article.title}}</h3>
 		            <hr/>
 		            {{article.description}}

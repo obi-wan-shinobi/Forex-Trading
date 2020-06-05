@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 declare const TradingView: any;
 
@@ -8,11 +9,12 @@ declare const TradingView: any;
   styleUrls: ['./trading-view.component.css']
 })
 
-export class TradingviewComponent implements OnInit, AfterViewInit {
+export class TradingviewComponent implements AfterViewInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  goHome() {
+    this.router.navigate(['/']);
   }
 
   ngAfterViewInit(){
@@ -20,7 +22,7 @@ export class TradingviewComponent implements OnInit, AfterViewInit {
       {
       "width": 980,
       "height": 610,
-      "symbol": "FX:EURUSD",
+      "symbol": "OANDA:USDINR",
       "timezone": "Etc/UTC",
       "theme": "Light",
       "style": "1",
@@ -39,5 +41,4 @@ export class TradingviewComponent implements OnInit, AfterViewInit {
     }
       );
   }
-
 }
