@@ -32,8 +32,8 @@ export class NewsComponent implements OnInit {
     this.newsapi.getArticlesByID(source).subscribe(data => this.mArticles = data['articles']);
   }
 
-  goHome() {
-    this.router.navigate(['/']);
-  }
+  // goHome() {
+  //   this.router.navigate(['/']);
+  // }
 
 }
