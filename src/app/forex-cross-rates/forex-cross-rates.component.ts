@@ -72,13 +72,6 @@ export class ForexCrossRatesComponent implements AfterViewInit {
       script.innerHTML = JSON.stringify( this.settings );
       this.containerDiv.nativeElement.appendChild( script );
       const brandingDiv = document.createElement( 'div' );
-      brandingDiv.innerHTML = `
-      <div class="tradingview-widget-copyright">
-      <a href="https://www.tradingview.com/symbols/${ this.symbol }/" rel="noopener" target="_blank">
-      <span class="blue-text">${ this.symbol } Fundamental Data</span></a>
-               by TradingView
-           </div>
-      `
     } );
 }
 }

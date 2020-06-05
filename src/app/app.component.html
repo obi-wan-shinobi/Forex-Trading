@@ -1,13 +1,4 @@
-  <button (click)="setNews()" class="btn btn-primary" type="button" name="button">News</button>
-  <div class="container" *ngIf="news_value">
-    <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" routerLink='/news'>News</a>
-  </nav>
-  </div>
-  <button (click)="setTradingView()" class="btn btn-primary" type="button" name="button">TradingView</button>
-  <div class="container" *ngIf="trade">
-    <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" routerLink='/tradingview'>TradingView</a>
-  </nav>
-  </div>
+<a class="btn" routerLink='/news'>News</a>
+<a class="btn" routerLink='/tradingview'>TradingView</a>
+<a class="btn" routerLink='/forex'>Forex</a>
 <router-outlet></router-outlet>
