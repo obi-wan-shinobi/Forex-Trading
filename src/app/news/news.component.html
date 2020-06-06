@@ -1,84 +1,33 @@
 <hr>
 <h1>News</h1>
 <hr>
-<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
-		{{source.name}}
-</div>
-<div *ngFor="let article of mArticles">
-	&nbsp;
-	<div class="card text-center">
-        <div class="card-body">
-	            <h3>{{article.title}}</h3>
-	            <hr/>
-	            {{article.description}}
-	            <p align="center">
-	            <a href="{{article.url}}" class="btn" style="background-color: green;">Read Full News</a>
-	        	</p>
-	    </div>
-	</div>
-</div>
-<!--<div class="form-group row">
-	<div class="col-lg-3" style=" margin-top: 10px; text-align: top;">
-		<div *ngIf = "!isShow">
-			<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
-				<button type="button" name="button" class="btn" style="width: 100%; text-align: left;">{{source.name}}</button>
-			</div>
-		</div>
-	</div>
-	<div class="col-lg-3" style="margin-left: 150px; text-align: top;" >
-		
-		<h1>News:</h1>
-		<div *ngFor="let article of mArticles">
-			&nbsp;
-		<div class="card text-center">
-	        <div class="card-body">
-		            <h3>{{article.title}}</h3>
-		            <hr/>
-		            {{article.description}}
-		            <p align="center">
-		            <a href="{{article.url}}" class="btn" style="background-color: green;">Read Full News</a>
-		        	</p>
-		    </div>
-		</div>
-		</div>
-	</div>
-</div> -->
-<!-- <div class="clearfix">
-			<div style="padding-top: 2em;">
-				<button class="btn" style="width: 10%" (click) = toggleDisplay()>News Sources</button>
-			</div>
 <table>
 	<tr>
-		<td>
-
-
+		<td valign="top" width="200px">
+			<button class="btn orange" (click)="toggleDisplay()" style="width: 100%;">News Sources &nbsp;<div class="arrow down"></div></button>	
 			<div *ngIf = "!isShow">
-				<!-- <div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
-					<button type="button" name="button" class="btn" style="width: 100%; text-align: left;">{{source.name}}</button>
-				</div> -->
-				<!-- <ul>
-					<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
-						{{source.name}}
-					
-				</div>
-				</ul>
+			<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
+					{{source.name}}
+					<hr style="padding-bottom: 0px;">
+			</div>
 			</div>
 		</td>
-		<td>
+		<td valign="top" style="padding-left: 430px; border-left: 1px;">
 			<div *ngFor="let article of mArticles">
 			&nbsp;
-		<div class="card text-center">
-	        <div class="card-body">
-		            <h3>{{article.title}}</h3>
-		            <hr/>
-		            {{article.description}}
-		            <p align="center">
-		            <a href="{{article.url}}" class="btn" style="background-color: green;">Read Full News</a>
-		        	</p>
-		    </div>
-		</div>
-	</div>
+			<div class="card"  ng-init="count=count+1">
+		        	<!-- <img src="{'background-img':'url(../assets/images/'+source.id+'.png)'}"> -->
+		        	<img src="../assets/images/news.jpg" width="100%">
+		        	<div class="container">
+			            <h3 style="font-weight: bold;">{{article.title}}</h3>
+			            <hr/>
+			            {{article.description}}
+			            <p align="center">
+			            <a href="{{article.url}}" class="btn" style="text-decoration: none;">Read Full News</a>
+			        	</p>
+			    	</div>
+			</div>
+			</div>	
 		</td>
 	</tr>
 </table>
-</div> -->

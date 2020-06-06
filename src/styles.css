@@ -9,8 +9,9 @@ body{
 	color:#212529;
 	text-align:left;
 	background-color:#fff;
-    padding: 2em 7em;
+  padding: 2em 7em;
 }
+
 @media only screen and (max-width: 320px) {
 
    body { 
@@ -101,8 +102,7 @@ body{
 
 .list-item:hover{
     cursor: pointer;
-    background-color: #3f51b5;
-    color: white;
+    background-color: #ffcc80;
 }
 
 hr{
@@ -163,12 +163,45 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn:hover {
 	color: #0984e3;
-	width: 100px;
+	/*width: 100px;*/
 	text-decoration: none;
 	border-color:#2ecc71;
 }
 
+.orange {
+  background-color: #ff9900;
+  border-radius: 5px;
+  border-color: orange;
+}
+.orange:hover{
+  color: red;
+  background-color: #ffcc80;
+  border-color: red; 
+}
+.arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
 footer{
-	background-color: black;
-	color: white;
+	background-color: #ffffff;
+	color: #808080;
+  position: fixed;
+  bottom: 0;
+  width: 88%;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+header{
+  background-color: #737373;
+  color: white;
+  text-align: center;
 }
