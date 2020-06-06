@@ -1,14 +1,14 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { Router } from "@angular/router";
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-forex-cross-rates',
-  templateUrl: './forex-cross-rates.component.html',
-  styleUrls: ['./forex-cross-rates.component.css']
+  selector: 'app-screener',
+  templateUrl: './screener.component.html',
+  styleUrls: ['./screener.component.css']
 })
-export class ForexCrossRatesComponent implements AfterViewInit {
+export class ScreenerComponent implements AfterViewInit {
 
-  symbol: string = "forex-cross-rates";
+  symbol: string = "screener";
   settings: any = {};
   widgetId: string = '';
 
@@ -51,32 +51,23 @@ export class ForexCrossRatesComponent implements AfterViewInit {
       //  };
 
       this.settings = {
-        "width": 840,
-        "height": 400,
-        "currencies": [
-          "EUR",
-          "USD",
-          "JPY",
-          "GBP",
-          "CHF",
-          "AUD",
-          "CAD",
-          "NZD",
-          "CNY",
-          "INR"
-        ],
-        "isTransparent:": false,
+        "width": 1100,
+        "height": 512,
+        "defaultColumn": "overview",
+        "defaultScreen": "general",
+        "market": "forex",
+        "showToolbar": true,
         "colorTheme": "light",
         "locale": "in"
       };
 
       const script = document.createElement( 'script' );
-      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js';
+      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-screener.js';
       script.async = true;
       script.id = this.widgetId;
       script.innerHTML = JSON.stringify( this.settings );
       this.containerDiv.nativeElement.appendChild( script );
       const brandingDiv = document.createElement( 'div' );
     } );
-}
+  }
 }
