@@ -16,10 +16,6 @@ export class ForexCrossRatesComponent implements AfterViewInit {
 
   constructor( private _elRef: ElementRef, private router: Router ) { }
 
-  goHome() {
-    this.router.navigate(['/']);
-  }
-
   ngAfterViewInit() {
 
     setTimeout(() => {

@@ -1,3 +1,21 @@
-<div class="container" *ngFor="let rate of rates">
-  {{rate}}
+<h1>Forex Rates</h1>
+<select [(ngModel)]="base" class="btn">
+  <option value={{key}} *ngFor="let key of keys">{{key}}</option>
+</select>
+<button class="btn" type="button" name="button" (click)="getData()">Get rates</button>
+<div class="" *ngIf="showData">
+  <div>Date: {{data['date'] | date}}</div>
+  <div>Base: {{data['base']}}</div>
+</div>
+<div class="" *ngIf="showData">
+  <table class="content-table">
+    <tr>
+      <th>Currency</th>
+      <th>Exchange Rate</th>
+    </tr>
+    <tr *ngFor="let key of keys">
+      <td>{{key}}</td>
+      <td>{{rates[key]}}</td>
+    </tr>
+  </table>
 </div>

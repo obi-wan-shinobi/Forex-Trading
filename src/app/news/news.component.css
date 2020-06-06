@@ -207,8 +207,8 @@
     display: table;
 }
 ul{
-    list-style: none; 
-    padding-left:0px; 
+    list-style: none;
+    padding-left:0px;
     background-color: orange;
     color: white;
 }

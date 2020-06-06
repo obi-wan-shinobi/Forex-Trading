@@ -6,11 +6,12 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ForexService {
 
-  api_key = 'd69bd84631322707c8df6909640a8d14'
+  //api_key = 'd69bd84631322707c8df6909640a8d14'
 
   constructor(private _http: HttpClient) { }
 
-  latestRates(): Promise<any> {
-    return this._http.get('http://data.fixer.io/api/latest?access_key='+this.api_key).toPromise();
+  latestRates(base: string = "USD"): Promise<any> {
+    //return this._http.get('http://data.fixer.io/api/latest?access_key='+this.api_key+'&base='+base).toPromise();
+    return this._http.get('https://api.exchangeratesapi.io/latest?base='+base).toPromise();
   }
 }
