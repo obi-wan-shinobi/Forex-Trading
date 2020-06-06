@@ -13,10 +13,6 @@ export class TradingviewComponent implements AfterViewInit {
 
   constructor(private router: Router) { }
 
-  goHome() {
-    this.router.navigate(['/']);
-  }
-
   ngAfterViewInit(){
     new TradingView.widget(
       {

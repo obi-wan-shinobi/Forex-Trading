@@ -6,14 +6,17 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 </head>
 <body>
   <header>
-    <h1 align="center">FinIQ Assignment 1</h1>
+    <div style="background-color: black; color: white;">
+      <center>A project for Summer Internship at FinIQ, Nashik</center>
+    </div>
+    <h1 align="center" style="font-size: 50px"><strong>FinIQ Assignment 1</strong></h1>
   </header>
 
 <div>
@@ -55,6 +58,57 @@
   <!-- TradingView Widget END -->
 </div>
   <app-root></app-root>
+<!--<div class="container">
+    <center>
+    <hr>
+    <h1>Forex Rates</h1>
+    <hr>
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+        {
+          "width": 840,
+          "height": 400,
+          "currencies": [
+          "EUR",
+          "USD",
+          "JPY",
+          "GBP",
+          "CHF",
+          "AUD",
+          "CAD",
+          "NZD",
+          "CNY",
+          "INR"
+          ],
+          "isTransparent": true,
+          "colorTheme": "light",
+          "locale": "in"
+        }
+      </script>
+    </div>
+    <br><br>
+    <hr>
+    <h1>Screener</h1>
+    <hr>
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+        {
+          "width": 1100,
+          "height": 512,
+          "defaultColumn": "overview",
+          "defaultScreen": "top_gainers",
+          "market": "forex",
+          "showToolbar": true,
+          "colorTheme": "light",
+          "locale": "in",
+          "isTransparent": true
+        }
+      </script>
+    </div>
+    </center>
+  </div> -->
   <br><br>
   <footer>
     <center>A project made by Dipti Kasliwal and Obi-Wan-Shinobi</center>

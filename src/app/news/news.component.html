@@ -1,15 +1,32 @@
-<div style="padding-top: 2em;">
-	<button class="btn" style="width:10%;" (click) = toggleDisplay()>News Sources</button>
+<hr>
+<h1>News</h1>
+<hr>
+<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
+		{{source.name}}
 </div>
-<div class="form-group row">
-	<div class="col-lg-3" style=" margin-top: 10px; align-content: top;">
+<div *ngFor="let article of mArticles">
+	&nbsp;
+	<div class="card text-center">
+        <div class="card-body">
+	            <h3>{{article.title}}</h3>
+	            <hr/>
+	            {{article.description}}
+	            <p align="center">
+	            <a href="{{article.url}}" class="btn" style="background-color: green;">Read Full News</a>
+	        	</p>
+	    </div>
+	</div>
+</div>
+<!--<div class="form-group row">
+	<div class="col-lg-3" style=" margin-top: 10px; text-align: top;">
 		<div *ngIf = "!isShow">
 			<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
 				<button type="button" name="button" class="btn" style="width: 100%; text-align: left;">{{source.name}}</button>
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-3" style="margin-left: 150px;">
+	<div class="col-lg-3" style="margin-left: 150px; text-align: top;" >
+		
 		<h1>News:</h1>
 		<div *ngFor="let article of mArticles">
 			&nbsp;
@@ -25,4 +42,43 @@
 		</div>
 		</div>
 	</div>
-</div>
+</div> -->
+<!-- <div class="clearfix">
+			<div style="padding-top: 2em;">
+				<button class="btn" style="width: 10%" (click) = toggleDisplay()>News Sources</button>
+			</div>
+<table>
+	<tr>
+		<td>
+
+
+			<div *ngIf = "!isShow">
+				<!-- <div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
+					<button type="button" name="button" class="btn" style="width: 100%; text-align: left;">{{source.name}}</button>
+				</div> -->
+				<!-- <ul>
+					<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
+						{{source.name}}
+					
+				</div>
+				</ul>
+			</div>
+		</td>
+		<td>
+			<div *ngFor="let article of mArticles">
+			&nbsp;
+		<div class="card text-center">
+	        <div class="card-body">
+		            <h3>{{article.title}}</h3>
+		            <hr/>
+		            {{article.description}}
+		            <p align="center">
+		            <a href="{{article.url}}" class="btn" style="background-color: green;">Read Full News</a>
+		        	</p>
+		    </div>
+		</div>
+	</div>
+		</td>
+	</tr>
+</table>
+</div> -->
