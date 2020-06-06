@@ -9,6 +9,7 @@ import { Router } from "@angular/router";
 })
 export class NewsComponent implements OnInit {
   isShow = true;
+  count = 0;
   toggleDisplay() {
     this.isShow = !this.isShow;
   }
