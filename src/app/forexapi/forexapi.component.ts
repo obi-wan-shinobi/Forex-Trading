@@ -9,11 +9,16 @@ import { ForexService } from "../forex.service";
 export class ForexapiComponent implements OnInit {
 
   data:any;
+  rates:Array<any>;
   constructor(private forex: ForexService) {
     console.log('Forex component constructor called');
   }
 
-  ngOnInit(): void {
-    this.forex.latestRates().subscribe(data => this.data = JSON.parse(JSON.stringify(data)));
+async  ngOnInit() {
+    this.data = await this.forex.latestRates();
+    console.log(typeof(this.data));
+    for(let rate of this.data){
+      this.rates.push(rate);
     }
   }
+}

@@ -10,7 +10,7 @@ export class ForexService {
 
   constructor(private _http: HttpClient) { }
 
-  latestRates() {
-    return this._http.get('http://data.fixer.io/api/latest?access_key='+this.api_key);
+  latestRates(): Promise<any> {
+    return this._http.get('http://data.fixer.io/api/latest?access_key='+this.api_key).toPromise();
   }
 }

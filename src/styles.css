@@ -86,25 +86,29 @@ h1,h2,h3,h4,h5,h6{
 .btn {
 	display: inline-block;
 	font-weight: 400;
-	color: #212529;
+	color: #000000;
 	text-align: center;
 	vertical-align: middle;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	background-color: #8ba1d5;
-	border: 1px solid transparent;
-	padding: .375rem .75rem;
+	background-color: #EEEEEE;
+	border: 2px solid #3498db;
+	border-radius: 24px;
+	padding: 7px 10px;
 	font-size: 1rem;
 	line-height: 1.5;
-	border-radius: .25rem;
-	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+	transition: 0.5s;
+	margin: 50 px auto;
 }
 
 .btn:hover {
-	color: #c7d2eb;
-	text-decoration: none
+	color: #0984e3;
+	width: 100px;
+	text-decoration: none;
+	border-color:#2ecc71;
 }
 
 .btn.focus,
