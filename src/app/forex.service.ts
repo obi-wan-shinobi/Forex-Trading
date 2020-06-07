@@ -14,4 +14,8 @@ export class ForexService {
     //return this._http.get('http://data.fixer.io/api/latest?access_key='+this.api_key+'&base='+base).toPromise();
     return this._http.get('https://api.exchangeratesapi.io/latest?base='+base).toPromise();
   }
+
+  specificSymbols(symbols: string = "USD"): Promise<any> {
+    return this._http.get("https://api.exchangeratesapi.io/latest?symbols="+symbols).toPromise();
+  }
 }
