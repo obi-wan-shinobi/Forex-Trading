@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
 .orange:hover{
   color: red;
   background-color: #ffcc80;
-  border-color: red; 
+  border-color: red;
 }
 .arrow {
   border: solid black;
