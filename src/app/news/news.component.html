@@ -6,10 +6,15 @@
 		<td valign="top" width="200px">
 			<button class="btn orange" (click)="toggleDisplay()" style="width: 100%;">News Sources &nbsp;<div class="arrow down"></div></button>
 			<div *ngIf = "!isShow">
-			<div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
+				<select class="btn" [(ngModel)]="selectedSource">
+					<option value="{{source.id}}" *ngFor="let source of mSources" (click)="searchArticles(source.id);">{{source.name}}</option>
+					<hr style="padding-bottom: 0px;">
+				</select>
+				<button class="btn" type="button" name="button" (click)="searchArticles(selectedSource)">Get Updates</button>
+			<!-- <div class="list-item" *ngFor="let source of mSources" (click)="searchArticles(source.id);">
 					{{source.name}}
 					<hr style="padding-bottom: 0px;">
-			</div>
+			</div> -->
 			</div>
 		</td>
 		<td valign="top" style="padding-left: 430px; border-left: 1px;">

@@ -15,7 +15,7 @@ export class NewsComponent implements OnInit {
   }
   mArticles:Array<any>;
   mSources:Array<any>;
-
+  public selectedSource: string;
   constructor(private newsapi:NewsApiService, private router: Router) {
     console.log('News component constructor called');
   }
