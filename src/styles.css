@@ -227,12 +227,12 @@ header,footer{
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
+.btn:hover{
+  color: #19dafa !important;
+}
 span{
   display: block;
   padding: 8px 22px;
-}
-.btn:hover{
-
 }
 h1,h2,h3,h4,h5,h6{
   color: #fff;
