@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 body{
 	margin:0;
 	font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
@@ -50,7 +50,6 @@ body{
 }
 
 @media only screen and (max-width:620px) {
-  /* For mobile phones: */
   .menu, .main, .right {
     width:100%;
   }
@@ -163,7 +162,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn:hover {
 	color: #0984e3;
-	/*width: 100px;*/
 	text-decoration: none;
 	border-color:#2ecc71;
 }
@@ -204,4 +202,44 @@ header{
   background-color: #737373;
   color: white;
   text-align: center;
+}
+*/
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body{
+  width: 100%;
+  height: 100%;
+  background: #42455a;
+}
+header,footer{
+  color: #fff;
+  text-align: center;
+}
+.btn{
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(#42455a,#42455a),radial-gradient(circle at top left,#fd00da,#19d7f8);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+span{
+  display: block;
+  padding: 8px 22px;
+}
+.btn:hover{
+
+}
+h1,h2,h3,h4,h5,h6{
+  color: #fff;
+}
+p{
+  color: #fff;
+}
+.heading{
+  padding-top: 15px;
 }

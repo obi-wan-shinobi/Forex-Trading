@@ -1,5 +1,8 @@
+<div class="heading">
 <hr>
-<h1>Forex Rates</h1>
+<h1 style="padding-left: 20px;">Forex Rates</h1>
+<hr>
+<br>
 <select [(ngModel)]="base" class="btn">
   <option value={{key}} *ngFor="let key of keys">{{key}}</option>
 </select>
@@ -19,4 +22,5 @@
       <td>{{rates[key]}}</td>
     </tr>
   </table>
+</div>
 </div>
