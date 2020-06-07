@@ -3,16 +3,22 @@
 <h1 style="padding-left: 20px;">Forex Rates</h1>
 <hr>
 <br>
-<select [(ngModel)]="base" class="btn">
-  <option value={{key}} *ngFor="let key of keys">{{key}}</option>
+<div style="padding-left: 20px;">
+  <p>Select Source:
+<select [(ngModel)]="base" class="btn" style="border-radius: 5px;">
+  <option value="" disabled selected="selected">Select Source</option>
+  <option value={{key}} *ngFor="let key of keys"><span>{{key}}</span></option>
 </select>
-<button class="btn" type="button" name="button" (click)="getData()">Get rates</button>
-<div class="" *ngIf="showData">
+</p>
+<br>
+<button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button>
+<br><br>
+<div class="table-data" *ngIf="showData">
   <div>Date: {{data['date'] | date}}</div>
   <div>Base: {{data['base']}}</div>
 </div>
-<div class="" *ngIf="showData">
-  <table class="content-table">
+<div class="table-data" *ngIf="showData">
+  <table class="center">
     <tr>
       <th>Currency</th>
       <th>Exchange Rate</th>
@@ -22,5 +28,6 @@
       <td>{{rates[key]}}</td>
     </tr>
   </table>
+</div>
 </div>
 </div>

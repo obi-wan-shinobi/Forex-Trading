@@ -8,3 +8,27 @@
   height: 34px;
   background-color: #fff;
 }
+.table-data{
+	color: #fff;
+}
+table {
+  border-collapse: collapse;
+  width: 25%;
+  /*border: 1px solid #ddd;*/
+}
+
+  table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+	background-color:#19dafa;
+	color: #000;
+}
