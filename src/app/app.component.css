@@ -1,4 +1,4 @@
-ul {
+/*ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -20,4 +20,22 @@ li a {
 
 li a:hover {
   background-color: #ff9900;
+}*/
+
+.menu ul{
+  display: inline-flex;
+  margin: 20px;
+}
+.menu ul li{
+  list-style: none;
+  margin: 0 20px;
+  cursor: pointer;
+}
+.menu ul li a{
+  text-decoration: none;
+  /*color: #b2b1b1;*/
+  color: #fff;
+}
+.menu ul li a:hover{
+  color: #19dafa !important;
 }
