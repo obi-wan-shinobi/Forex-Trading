@@ -20,7 +20,7 @@ export class TradingviewComponent implements AfterViewInit {
       "height": 610,
       "symbol": "OANDA:USDINR",
       "timezone": "Etc/UTC",
-      "theme": "Light",
+      "theme": "Dark",
       "style": "1",
       "locale": "en",
       "toolbar_bg": "#f1f3f6",

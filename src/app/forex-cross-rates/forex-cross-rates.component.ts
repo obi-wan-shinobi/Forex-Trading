@@ -34,18 +34,6 @@ export class ForexCrossRatesComponent implements AfterViewInit {
           }, false,
         );
       }
-
-      // this.settings = {
-      //    symbol: this.symbol,
-      //    colorTheme: 'light',
-      //    isTransparent: false,
-      //    largeChartUrl: '',
-      //    displayMode: 'regular',
-      //    height: 300,
-      //    autosize: true,
-      //    locale: 'en',
-      //  };
-
       this.settings = {
         "width": 840,
         "height": 400,
@@ -61,8 +49,8 @@ export class ForexCrossRatesComponent implements AfterViewInit {
           "CNY",
           "INR"
         ],
-        "isTransparent:": false,
-        "colorTheme": "light",
+        "isTransparent:": true,
+        "colorTheme": "dark",
         "locale": "in"
       };
 

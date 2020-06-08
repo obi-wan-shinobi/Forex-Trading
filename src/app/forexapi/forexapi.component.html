@@ -31,7 +31,7 @@
 </div>
 </div>
 </div> -->
-<div style="padding-left: 20px;">
+<!-- <div style="padding-left: 20px;">
   <p>Select Source:
   <select [(ngModel)]="base" class="btn">
     <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
@@ -40,7 +40,13 @@
   <br>
 <button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button> &nbsp;&nbsp;
 <button class="btn" type="button" name="button" (click)="getWatchlist()"><span>Show Watchlist</span></button><br><br>
-<div class="table-data" *ngIf="showData">
+<div class="table-data" *ngIf="showData"> -->
+<select [(ngModel)]="base" class="btn">
+  <option value={{key}} *ngFor="let key of keys" style="color: black;">{{key}}</option>
+</select>
+<button class="btn" type="button" name="button" (click)="getData()">Get rates</button>
+<button class="btn" type="button" name="button" (click)="getWatchlist()">Show Watchlist</button>
+<div class="" *ngIf="showData">
   <div>Date: {{data['date'] | date}}</div>
   <div>Base: {{data['base']}}</div>
 </div>
@@ -57,7 +63,7 @@
       <tr *ngFor="let key of keys">
         <td>{{key}}</td>
         <td>{{rates[key]}}</td>
-        <td><input type="checkbox" value="{{key}}" (click)="addToWatchlist(key)"></td>
+        <td><input class="btn" type="checkbox" (click)="addToWatchlist(key)">Add to watchlist</td>
       </tr>
     </table>
     </td>
@@ -78,4 +84,3 @@
   </div>
 </table>
 </div>
-
