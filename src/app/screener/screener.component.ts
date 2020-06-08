@@ -35,17 +35,6 @@ export class ScreenerComponent implements AfterViewInit {
         );
       }
 
-      // this.settings = {
-      //    symbol: this.symbol,
-      //    colorTheme: 'light',
-      //    isTransparent: false,
-      //    largeChartUrl: '',
-      //    displayMode: 'regular',
-      //    height: 300,
-      //    autosize: true,
-      //    locale: 'en',
-      //  };
-
       this.settings = {
         "width": 1100,
         "height": 512,
@@ -53,8 +42,9 @@ export class ScreenerComponent implements AfterViewInit {
         "defaultScreen": "general",
         "market": "forex",
         "showToolbar": true,
-        "colorTheme": "light",
-        "locale": "in"
+        "colorTheme": "dark",
+        "locale": "in",
+        "isTransparent": true
       };
 
       const script = document.createElement( 'script' );
