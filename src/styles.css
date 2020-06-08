@@ -243,3 +243,8 @@ p{
 .heading{
   padding-top: 15px;
 }
+
+button::-moz-focus-inner {
+  border: 0;
+}
+

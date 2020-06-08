@@ -12,6 +12,7 @@ export class ForexapiComponent implements OnInit {
   rates:any;
   keys:any;
   watch:any;
+  public watch_state;
   watch_rates:any;
   watch_keys:any;
   public watchlist=[];
@@ -38,9 +39,17 @@ export class ForexapiComponent implements OnInit {
   }
 
   addToWatchlist(currency) {
-    this.watchlist.push(currency);
-    console.log("Pushed:"+currency);
-    console.log("Updated watchlist:"+this.watchlist);
+    if(this.watchlist.includes(currency)) {
+      var index = this.watchlist.indexOf(currency);
+      this.watchlist.splice(index, 1);
+      console.log("Removed:"+currency);
+      console.log("Updated watchlist:"+this.watchlist);
+    }
+    else {
+      this.watchlist.push(currency);
+      console.log("Pushed:"+currency);
+      console.log("Updated watchlist:"+this.watchlist);
+    }
   }
 
   async getWatchlist() {

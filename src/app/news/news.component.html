@@ -9,7 +9,7 @@
 				<select class="btn" [(ngModel)]="selectedSource">
 					<option value="{{source.id}}" *ngFor="let source of mSources" (click)="searchArticles(source.id);"><span>{{source.name}}</span></option>
 				</select>
-				<button class="btn" type="button" name="button" (click)="searchArticles(selectedSource);">Get Updates</button>
+				<!-- <button class="btn" type="button" name="button" (click)="searchArticles(selectedSource);">Get Updates</button> -->
 		</td>
 		<td valign="top" style="padding-left: 460px;">
 			<div *ngFor="let article of mArticles">
