@@ -13,6 +13,12 @@
 <button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button> &nbsp;&nbsp;
 <button class="btn" type="button" name="button" (click)="getWatchlist()"><span>Show Watchlist</span></button><br><br>
 <!-- <div class="table-data" *ngIf="showData">
+<select [(ngModel)]="base" class="btn">
+  <option value={{key}} *ngFor="let key of keys" style="color: black;">{{key}}</option>
+</select>
+<button class="btn" type="button" name="button" (click)="getData()">Get rates</button>
+<button class="btn" type="button" name="button" (click)="getWatchlist()">Show Watchlist</button>
+<div style="color: white;" class="" *ngIf="showData">
   <div>Date: {{data['date'] | date}}</div>
   <div>Base: {{data['base']}}</div>
 </div> -->
