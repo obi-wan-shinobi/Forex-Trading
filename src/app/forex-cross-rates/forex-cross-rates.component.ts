@@ -51,7 +51,8 @@ export class ForexCrossRatesComponent implements AfterViewInit {
         ],
         "isTransparent:": true,
         "colorTheme": "dark",
-        "locale": "in"
+        "locale": "in",
+        "largeChartUrl": "http://localhost:4200/forexcrossrates"
       };
 
       const script = document.createElement( 'script' );

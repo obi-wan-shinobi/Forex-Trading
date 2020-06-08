@@ -3,8 +3,7 @@
 <h1 style="padding-left: 20px;">Forex Rates</h1>
 <hr>
 <br>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <!-- <div style="padding-left: 20px;">
   <p>Select Source:
 <select [(ngModel)]="base" class="btn" style="border-radius: 5px;">
@@ -42,25 +41,16 @@
   <br>
 <button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button> &nbsp;&nbsp;
 <button class="btn" type="button" name="button" (click)="getWatchlist()"><span>Show Watchlist</span></button><br><br>
-<div class="table-data" *ngIf="showData">
-=======
-=======
->>>>>>> 48ac938... Watchlist complete
-<select [(ngModel)]="base" class="btn">
-  <option value={{key}} *ngFor="let key of keys" style="color: black;">{{key}}</option>
-</select>
-<button class="btn" type="button" name="button" (click)="getData()">Get rates</button>
-<button class="btn" type="button" name="button" (click)="getWatchlist()">Show Watchlist</button>
-<div class="" *ngIf="showData">
->>>>>>> 48ac938... Watchlist complete
+<!-- <div class="table-data" *ngIf="showData">
   <div>Date: {{data['date'] | date}}</div>
   <div>Base: {{data['base']}}</div>
-</div>
+</div> -->
 <table class="center">
   <div class="table-data" *ngIf="showData">
   <tr>
     <td>
       <table class="simple">
+        <caption><h3>Rates for {{data['base']}} ({{data['date'] | date}})</h3></caption>
       <tr>
         <th>Currency</th>
         <th>Exchange Rate</th>
@@ -90,7 +80,4 @@
   </div>
 </table>
 </div>
-<<<<<<< HEAD
-=======
-</div>
->>>>>>> 48ac938... Watchlist complete
+
