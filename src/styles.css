@@ -214,9 +214,17 @@ body{
   height: 100%;
   background: #42455a;
 }
-header,footer{
+header{
   color: #fff;
   text-align: center;
+}
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  color: #fff;
 }
 .btn{
   text-decoration: none;
