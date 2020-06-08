@@ -3,15 +3,6 @@
 <h1 style="padding-left: 20px;">Forex Rates</h1>
 <hr>
 <br>
-<div style="padding-left: 20px;">
-  <p>Select Source:
-  <select [(ngModel)]="base" class="btn">
-    <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
-  </select>
-  </p>
-  <br>
-<button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button> &nbsp;&nbsp;
-<button class="btn" type="button" name="button" (click)="getWatchlist()"><span>Show Watchlist</span></button><br><br>
 <!-- <div class="table-data" *ngIf="showData">
 <select [(ngModel)]="base" class="btn">
   <option value={{key}} *ngFor="let key of keys" style="color: black;">{{key}}</option>
@@ -80,6 +71,7 @@
     <td>
       <table class="simple">
         <caption><h3>Watchlist</h3></caption>
+        <caption><h3>Base: {{watch['base']}}</h3></caption>
       <tr>
         <th>Currency</th>
         <th>Exchange Rate</th>

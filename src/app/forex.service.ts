@@ -15,7 +15,7 @@ export class ForexService {
     return this._http.get('https://api.exchangeratesapi.io/latest?base='+base).toPromise();
   }
 
-  specificSymbols(symbols: string = "USD"): Promise<any> {
-    return this._http.get("https://api.exchangeratesapi.io/latest?symbols="+symbols).toPromise();
+  specificSymbols(symbols: string = "USD", base: string="USD"): Promise<any> {
+    return this._http.get("https://api.exchangeratesapi.io/latest?base="+base+"&symbols="+symbols).toPromise();
   }
 }
