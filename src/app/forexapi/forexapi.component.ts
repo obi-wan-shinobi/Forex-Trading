@@ -24,6 +24,7 @@ export class ForexapiComponent implements OnInit {
 
   async requestData(base) {
     this.data = await this.forex.latestRates(base);
+    this.watch = await this.forex.specificSymbols();
     this.rates = this.data['rates'];
     this.keys = Object.keys(this.rates);
   }
