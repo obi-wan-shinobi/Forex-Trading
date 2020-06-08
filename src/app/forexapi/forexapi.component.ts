@@ -53,7 +53,7 @@ export class ForexapiComponent implements OnInit {
   }
 
   async getWatchlist() {
-    this.watch = await this.forex.specificSymbols(this.watchlist.join(','));
+    this.watch = await this.forex.specificSymbols(this.watchlist.join(','), this.base);
     this.watch_rates= this.watch['rates'];
     this.watch_keys = Object.keys(this.watch_rates);
   }

@@ -3,49 +3,6 @@
 <h1 style="padding-left: 20px;">Forex Rates</h1>
 <hr>
 <br>
-<!--<div style="padding-left: 20px;">
-  <p>Select Source:
-  <select [(ngModel)]="base" class="btn">
-    <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
-  </select>
-  </p>
-  <br>
-<button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button> &nbsp;&nbsp;
-<button class="btn" type="button" name="button" (click)="getWatchlist()"><span>Show Watchlist</span></button><br><br>
- <div class="table-data" *ngIf="showData">
-<select [(ngModel)]="base" class="btn">
-  <option value={{key}} *ngFor="let key of keys" style="color: black;">{{key}}</option>
-
- <div style="padding-left: 20px;">
-  <p>Select Source:
-<select [(ngModel)]="base" class="btn" style="border-radius: 5px;">
-  <option value="" disabled selected="selected">Select Source</option>
-  <option value={{key}} *ngFor="let key of keys"><span>{{key}}</span></option>
->>>>>>> f5038a15cc17da5d3b4bf21bc4e47ab613d7b1fa
-</select>
-</p>
-<br>
-<button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button>
-<br><br>
-<div class="table-data" *ngIf="showData">
-  <div>Date: {{data['date'] | date}}</div>
-  <div>Base: {{data['base']}}</div>
-
-</div>
-<div class="table-data" *ngIf="showData">
-  <table class="center">
-    <tr>
-      <th>Currency</th>
-      <th>Exchange Rate</th>
-    </tr>
-    <tr *ngFor="let key of keys">
-      <td>{{key}}</td>
-      <td>{{rates[key]}}</td>
-    </tr>
-  </table>
-</div>
-</div>
-</div> -->
 <div style="padding-left: 20px;">
   <p>Select Source:
   <select [(ngModel)]="base" class="btn">
@@ -79,7 +36,7 @@
     </td>
     <td>
       <table class="simple">
-        <caption><h3>Watchlist</h3></caption>
+        <caption><h3>Watchlist</h3><br><h3>Base: {{watch['base']}}</h3></caption>
       <tr>
         <th>Currency</th>
         <th>Exchange Rate</th>
