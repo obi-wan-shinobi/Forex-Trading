@@ -3,6 +3,7 @@
 <h1 style="padding-left: 20px;">Forex Rates</h1>
 <hr>
 <br>
+<div style="padding-left: 20px;">
 <!-- <div class="table-data" *ngIf="showData">
 <select [(ngModel)]="base" class="btn">
   <option value={{key}} *ngFor="let key of keys" style="color: black;">{{key}}</option>
@@ -70,7 +71,8 @@
     </td>
     <td>
       <table class="simple">
-        <caption><h3>Watchlist</h3><br><h3>Base: {{watch['base']}}</h3></caption>
+        <caption><h3>Watchlist</h3></caption>
+        <caption><h3>Base: {{watch['base']}}</h3></caption>
       <tr>
         <th>Currency</th>
         <th>Exchange Rate</th>
