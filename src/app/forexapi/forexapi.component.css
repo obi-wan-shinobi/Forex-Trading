@@ -11,24 +11,36 @@
 .table-data{
 	color: #fff;
 }
-table {
+table.center{
+	margin-left: auto;
+	margin-right: auto;
+}
+table .center tr, th, td{
+	width: 600px;
+}
+table .simple{
   border-collapse: collapse;
-  width: 25%;
   /*border: 1px solid #ddd;*/
 }
 
-  table.center {
+  /*table.simple .right {
     margin-left:auto; 
-    margin-right:auto;
   }
 
-th, td {
+table .simple .left {
+    margin-right: auto; 
+  }*/
+table.simple th, td {
   padding: 8px;
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;*/
+  color: #fff;
 }
-
-tr:hover {
-	background-color:#19dafa;
+table .simple th{
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+}
+table .simple tr:hover {
+	background-color: #19dafa;
 	color: #000;
 }
