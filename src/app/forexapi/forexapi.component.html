@@ -3,37 +3,94 @@
 <h1 style="padding-left: 20px;">Forex Rates</h1>
 <hr>
 <br>
+<div style="padding-left: 20px;">
+  <p>Select Source:
+  <select [(ngModel)]="base" class="btn">
+    <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
+  </select>
+  </p>
+  <br>
+<button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button> &nbsp;&nbsp;
+<button class="btn" type="button" name="button" (click)="getWatchlist()"><span>Show Watchlist</span></button><br><br>
+<!-- <div class="table-data" *ngIf="showData">
 <select [(ngModel)]="base" class="btn">
   <option value={{key}} *ngFor="let key of keys" style="color: black;">{{key}}</option>
+
+ <div style="padding-left: 20px;">
+  <p>Select Source:
+<select [(ngModel)]="base" class="btn" style="border-radius: 5px;">
+  <option value="" disabled selected="selected">Select Source</option>
+  <option value={{key}} *ngFor="let key of keys"><span>{{key}}</span></option>
+>>>>>>> f5038a15cc17da5d3b4bf21bc4e47ab613d7b1fa
 </select>
-<button class="btn" type="button" name="button" (click)="getData()">Get rates</button>
-<button class="btn" type="button" name="button" (click)="getWatchlist()">Show Watchlist</button>
-<div style="color: white;" class="" *ngIf="showData">
+</p>
+<br>
+<button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button>
+<br><br>
+<div class="table-data" *ngIf="showData">
   <div>Date: {{data['date'] | date}}</div>
   <div>Base: {{data['base']}}</div>
+
 </div>
-<div class="" *ngIf="showData">
-    <table class="content-table" style="float: left;">
+<div class="table-data" *ngIf="showData">
+  <table class="center">
+    <tr>
+      <th>Currency</th>
+      <th>Exchange Rate</th>
+    </tr>
+    <tr *ngFor="let key of keys">
+      <td>{{key}}</td>
+      <td>{{rates[key]}}</td>
+    </tr>
+  </table>
+</div>
+</div>
+</div> -->
+<div style="padding-left: 20px;">
+  <p>Select Source:
+  <select [(ngModel)]="base" class="btn">
+    <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
+  </select>
+  </p>
+  <br>
+<button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button> &nbsp;&nbsp;
+<button class="btn" type="button" name="button" (click)="getWatchlist()"><span>Show Watchlist</span></button><br><br>
+<!-- <div class="table-data" *ngIf="showData">
+  <div>Date: {{data['date'] | date}}</div>
+  <div>Base: {{data['base']}}</div>
+</div> -->
+<table class="center">
+  <div class="table-data" *ngIf="showData">
+  <tr>
+    <td>
+      <table class="simple">
+        <caption><h3>Rates for {{data['base']}} ({{data['date'] | date}})</h3></caption>
       <tr>
         <th>Currency</th>
         <th>Exchange Rate</th>
         <th>Add to watch list</th>
       </tr>
-      <tr *ngFor="let key of keys" style="color: white;">
+      <tr *ngFor="let key of keys">
         <td>{{key}}</td>
         <td>{{rates[key]}}</td>
         <td><input class="btn" type="checkbox" (click)="addToWatchlist(key)">Add to watchlist</td>
       </tr>
     </table>
-    <table class="content-table" style="float: right;">
+    </td>
+    <td>
+      <table class="simple">
+        <caption><h3>Watchlist</h3></caption>
       <tr>
         <th>Currency</th>
         <th>Exchange Rate</th>
       </tr>
-      <tr *ngFor="let key of watch_keys" style="color: white;">
+      <tr *ngFor="let key of watch_keys">
         <td>{{key}}</td>
         <td>{{watch_rates[key]}}</td>
       </tr>
     </table>
-</div>
+    </td>
+  </tr>
+  </div>
+</table>
 </div>
