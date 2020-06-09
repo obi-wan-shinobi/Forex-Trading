@@ -1,13 +1,35 @@
-<h1>Forex Bot</h1>
+<div class="heading">
+<hr>
+<h1 style="padding-left: 20px;">Forex Bot</h1>
+<hr>
+<br>
+<div class="big-container">
+	
 
-<ng-container *ngFor="let message of messages | async">
+<div class="container">
+  <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
+  <div *ngFor="let message of messages | async">
   <div class="message" [ngClass]="{'from' : message.sentBy === 'bot',
                                     'to': message.sentBy }">
-    {{message.content}}
+        {{message.sentBy}}:{{message.content}}:{{message.timestamp}}
   </div>
-</ng-container>
+</div>
+</div>
+
+<label for="nameField">Your Message</label>
+<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text"><br>
+<br>
+<button class="btn" style="margin: 0 auto; display: block;" (click)="sendMessage()"><span>Send</span></button>
+<!-- <div *ngFor="let message of messages | async">
+  <div class="message" [ngClass]="{'from' : message.sentBy === 'bot',
+                                    'to': message.sentBy }">
+        {{message.content}}
+  </div>
+</div>
 
 <label for="nameField">Your Message</label>
 <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text"><br>
 
-<button (click)="sendMessage()">Send</button>
+<button (click)="sendMessage()">Send</button> -->
+</div>
+</div>
