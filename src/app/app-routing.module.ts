@@ -6,6 +6,7 @@ import { ForexCrossRatesComponent } from "./forex-cross-rates/forex-cross-rates.
 import { ForexapiComponent } from "./forexapi/forexapi.component";
 import { ScreenerComponent } from "./screener/screener.component";
 import { HomeComponent } from "./home/home.component";
+import { ChatDialogComponent } from "./chat-dialog/chat-dialog.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'tradingview', component: TradingviewComponent},
   {path: 'forexcrossrates', component: ForexCrossRatesComponent},
   {path: 'forexapi', component: ForexapiComponent},
-  {path: 'screener', component: ScreenerComponent}
+  {path: 'screener', component: ScreenerComponent},
+  {path: 'chatbot', component: ChatDialogComponent}
 ];
 
 @NgModule({
@@ -23,4 +25,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [NewsComponent, TradingviewComponent, ForexapiComponent, ForexCrossRatesComponent, ScreenerComponent, HomeComponent]
+export const routingComponents = [NewsComponent, TradingviewComponent, ForexapiComponent, ForexCrossRatesComponent, ScreenerComponent, HomeComponent, ChatDialogComponent]

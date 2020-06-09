@@ -9,7 +9,16 @@
   },
   "files": [
     "src/test.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "node_modules/api-ai-javascript/index.ts",
+    "node_modules/api-ai-javascript/ts/ApiAiClient.ts",
+    "node_modules/api-ai-javascript/ts/ApiAiConstants.ts",
+    "node_modules/api-ai-javascript/ts/Errors.ts",
+    "node_modules/api-ai-javascript/ts/Interfaces.ts",
+    "node_modules/api-ai-javascript/ts/Request/EventRequest.ts",
+    "node_modules/api-ai-javascript/ts/Request/TextRequest.ts",
+    "node_modules/api-ai-javascript/ts/Request/Request.ts",
+    "node_modules/api-ai-javascript/ts/XhrRequest.ts"
   ],
   "include": [
     "src/**/*.spec.ts",
