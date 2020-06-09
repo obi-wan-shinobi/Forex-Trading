@@ -6,7 +6,7 @@ import { ApiAiClient } from "api-ai-javascript";
 import { Observable, BehaviorSubject } from "rxjs";
 
 export class Message {
-  constructor(public content: string, public sentBy: string) {}
+  constructor(public content: string, public sentBy: string, public timestamp: Date) {}
 }
 
 @Injectable({
@@ -28,13 +28,14 @@ export class ChatService {
   }
 
   converse(msg: string) {
-    const userMessage = new Message(msg, 'user');
+    const userMessage = new Message(msg, 'user', new Date(Date.now()));
     this.update(userMessage);
 
     return this.client.textRequest(msg)
         .then(res => {
           const speech = res.result.fulfillment.speech;
-          const botMessage = new Message(speech, 'bot');
+          const timestamp = res.timestamp;
+          const botMessage = new Message(speech, 'bot', timestamp);
           this.update(botMessage);
         });
   }
