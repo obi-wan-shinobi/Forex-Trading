@@ -8,4 +8,9 @@
   <li><a routerLink='/screener'>Screener</a></li>
 </ul>
 </div>
+<div  class="chatform">
+  <message-list [messages]="messages"></message-list>
+  <message-form [message]="message" [messages]="messages"></message-form>
+</div>
+
 <router-outlet></router-outlet>
