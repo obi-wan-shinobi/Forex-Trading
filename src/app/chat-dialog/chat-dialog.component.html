@@ -1,35 +1,33 @@
-<div class="heading">
+<div class="heading" id="cnt">
 <hr>
 <h1 style="padding-left: 20px;">Forex Bot</h1>
 <hr>
 <br>
-<div class="big-container">
-	
-
-<div class="container">
-  <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
+<div class="big-container" #scrollMe style="overflow: scroll; height: 485px;">
   <div *ngFor="let message of messages | async">
-  <div class="message" [ngClass]="{'from' : message.sentBy === 'bot',
+  <div class="message" [ngClass]="{'from' : message.sentBy === 'Bot',
                                     'to': message.sentBy }">
-    {{message.sentBy}}{{message.content}}{{message.timestamp | date:"HH:mm"}}
+    <div *ngIf="message.sentBy=='You'; else elseBlock">
+    	<div class="container">
+    		<i class="fa fa-user" style="font-size: 24px;"></i>
+    		<p>{{message.content}}</p>
+    		<span class="time-right">{{message.timestamp | date:"HH:mm"}}</span>
+    	</div>
+    </div>
+    <ng-template #elseBlock>
+    	<div class="container darker">
+    	  	<i class="fa fa-television" style="font-size: 24px;"></i>
+		  	<p>{{message.content}}</p>
+		  	<span class="time-left">{{message.timestamp | date:"HH:mm"}}</span>
+		</div>
+    </ng-template>
   </div>
 </div>
 </div>
-
-<label for="nameField">Your Message</label>
-<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text"><br>
+<div class="big-container">
+<!-- <label for="nameField">Your Message:</label> -->
+<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" style="width: 95%;" placeholder="Your Message"><br>
 <br>
 <button class="btn" style="margin: 0 auto; display: block;" (click)="sendMessage()"><span>Send</span></button>
-<!-- <div *ngFor="let message of messages | async">
-  <div class="message" [ngClass]="{'from' : message.sentBy === 'bot',
-                                    'to': message.sentBy }">
-        {{message.content}}
-  </div>
-</div>
-
-<label for="nameField">Your Message</label>
-<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text"><br>
-
-<button (click)="sendMessage()">Send</button> -->
 </div>
 </div>
