@@ -1,13 +1,33 @@
-<h1>Forex Bot</h1>
-
-<ng-container *ngFor="let message of messages | async">
-  <div style="color: white;" class="message" [ngClass]="{'from' : message.sentBy === 'bot',
+<div class="heading">
+<hr>
+<h1 style="padding-left: 20px;">Forex Bot</h1>
+<hr>
+<br>
+<div class="big-container" #scrollMe style="overflow: scroll; height: 485px;">
+  <div *ngFor="let message of messages | async">
+  <div class="message" [ngClass]="{'from' : message.sentBy === 'Bot',
                                     'to': message.sentBy }">
-    {{message.sentBy}}{{message.content}}{{message.timestamp | date:"HH:mm"}}
+    <div *ngIf="message.sentBy=='You'; else elseBlock">
+    	<div class="container">
+    		<i class="fa fa-user" style="font-size: 24px;"></i>
+    		<p>{{message.content}}</p>
+    		<span class="time-right">{{message.timestamp | date:"HH:mm"}}</span>
+    	</div>
+    </div>
+    <ng-template #elseBlock>
+    	<div class="container darker">
+    	  	<i class="fa fa-television" style="font-size: 24px;"></i>
+		  	<p>{{message.content}}</p>
+		  	<span class="time-left">{{message.timestamp | date:"HH:mm"}}</span>
+		</div>
+    </ng-template>
   </div>
-</ng-container>
-
-<label for="nameField">Your Message</label>
-<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text"><br>
-
-<button (click)="sendMessage()">Send</button>
+</div>
+</div>
+<div class="big-container">
+<!-- <label for="nameField">Your Message:</label> -->
+<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" style="width: 95%;" placeholder="Your Message"><br>
+<br>
+<button class="btn" style="margin: 0 auto; display: block;" (click)="sendMessage()"><span>Send</span></button>
+</div>
+</div>

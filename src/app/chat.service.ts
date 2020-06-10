@@ -28,16 +28,15 @@ export class ChatService {
   }
 
   converse(msg: string) {
-    const userMessage = new Message(msg, 'user', new Date(Date.now()));
+    const userMessage = new Message(msg, 'You', new Date(Date.now()));
     this.update(userMessage);
 
     return this.client.textRequest(msg)
         .then(res => {
           const speech = res.result.fulfillment.speech;
-          const timestamp = res.timestamp;
-          const botMessage = new Message(speech, 'bot', timestamp);
+          const timestamp = res['timestamp'];
+          const botMessage = new Message(speech, 'Bot', timestamp);
           this.update(botMessage);
         });
   }
-
 }
