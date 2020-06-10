@@ -12,6 +12,13 @@ export class ForexCrossRatesComponent implements AfterViewInit {
   settings: any = {};
   widgetId: string = '';
 
+  public currencies = [
+    "EUR","USD","JPY","GBP","CHF","AUD","CAD","NZD","CNY",
+    "TRY","SEK","NOK","DKK","ZAR","HKD","SGD","THB","MXN",
+    "IDR","KRW","PLN","ISK","KWD","PHP","MYR","INR","TWD",
+    "SAR","RUB","ILS"
+  ] ;
+
   @ViewChild('containerDiv', {static: true}) containerDiv: ElementRef;
 
   constructor( private _elRef: ElementRef, private router: Router ) { }
