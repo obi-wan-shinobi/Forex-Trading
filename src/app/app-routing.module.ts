@@ -8,7 +8,7 @@ import { ScreenerComponent } from "./screener/screener.component";
 import { HomeComponent } from "./home/home.component";
 import { ChatDialogComponent } from "./chat-dialog/chat-dialog.component";
 import { AboutComponent } from "./about/about.component";
-
+import { TradingPlatformComponent } from './trading-platform/trading-platform.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: 'screener', component: ScreenerComponent},
   {path: 'chatbot', component: ChatDialogComponent},
   {path: 'about', component: AboutComponent}
+  {path: 'trading', component: TradingPlatformComponent}
 ];
 
 @NgModule({
@@ -28,4 +29,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [NewsComponent, TradingviewComponent, ForexapiComponent, ForexCrossRatesComponent, ScreenerComponent, HomeComponent, ChatDialogComponent, AboutComponent]
+export const routingComponents = [NewsComponent, TradingviewComponent, ForexapiComponent, ForexCrossRatesComponent, ScreenerComponent, HomeComponent, ChatDialogComponent, AboutComponent, TradingPlatformComponent]
+
