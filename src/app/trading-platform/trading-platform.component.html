@@ -1,0 +1,39 @@
+<div class="">
+  <form #tradingForm="ngForm">
+
+    {{tradingForm.value | json}}
+    {{base}}{{quote}}
+
+    <div class="">
+      <label for="">Base Currency</label>
+      <select class="" name="baseCurrency" [(ngModel)]="base">
+        <option *ngFor="let currency of currencies" value="{{currency}}"><span>{{currency}}</span></option>
+      </select>
+      <label for="">Quote Currency</label>
+      <select class="" name="quoteCurrency" [(ngModel)]="quote">
+        <option *ngFor="let currency of currencies" value="{{currency}}"><span>{{currency}}</span></option>
+      </select>
+    </div>
+  </form>
+</div>
+<button type="button" name="button" (click)="show()" >Get Update</button>
+
+<div class="" *ngIf="showData">
+  <div class="">
+    <label for="">Base Currency:</label><br>
+    Symbol: {{realData.From_Currency_Code}}<br>
+    Name: {{realData.From_Currency_Name}}<br>
+  </div>
+  <br>
+  <div class="">
+    <label for="">Quote Currency</label><br>
+    Symbol: {{realData.To_Currency_Code}}<br>
+    Name: {{realData.To_Currency_Name}}<br>
+  </div>
+  <br>
+  Exchange Rate: {{realData.Exchange_Rate}}<br>
+  Last Updated: {{realData.Last_Refreshed | date: "HH:mm"}}<br>
+  Time Zone: {{realData.Time_Zone}}<br>
+  Bid: {{realData.Bid_price}}<br>
+  Ask: {{realData.Ask_price}}<br>
+</div>
