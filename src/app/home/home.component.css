@@ -1,0 +1,33 @@
+.banner {
+  width: 80%;
+  height: 70%;
+  top: 35%;
+  left: 8%;
+  position: absolute;
+}
+.app-text {
+  width: 80%;
+  float: left;
+}
+.app-text h1{
+  font-size: 50px;
+  width: 640px;
+  position: relative;
+  margin-left: 40px;
+}
+.app-text p{
+  width: 650px;
+  font-size: 15px;
+  margin: 30px 0 30px 40px;
+  line-height: 25px;
+  color: #919191;
+}
+.app-picture{
+  width: 50%;
+  float: right;
+}
+.app-picture img{
+  width: 100%;
+  margin-top: -300px;
+  padding-left: 50px;
+}
