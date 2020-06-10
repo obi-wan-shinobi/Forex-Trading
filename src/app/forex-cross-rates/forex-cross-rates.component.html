@@ -1,11 +1,11 @@
-<select class="btn" name="">
-  <option *ngFor="let currency in currencies" value="{{currency}}"><span>{{currency}}</span></option>
-</select>
 <div class="heading">
 <hr>
 <h1 style="padding-left: 20px;">Forex Cross Rates</h1>
 <hr>
 <br>
+<select class="btn">
+  <option value="{{currency}}" *ngFor="let currency of currencies"><span>{{currency}}</span></option>
+</select>
 <div class="tradingview-widget-container" style="height: 300px;   margin-left: auto;
   margin-right: auto;" #containerDiv>
   <div class="tradingview-widget-container__widget"></div>
