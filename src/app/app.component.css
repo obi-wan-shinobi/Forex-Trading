@@ -28,7 +28,7 @@ li a:hover {
 }
 .menu ul li{
   list-style: none;
-  margin: 0 20px;
+  margin: 0 30px;
   cursor: pointer;
 }
 .menu ul li a{
