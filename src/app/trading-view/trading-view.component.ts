@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, Input, ViewChild } from '@angular/core';
 import { Router } from "@angular/router";
 
 declare const TradingView: any;
@@ -11,7 +11,13 @@ declare const TradingView: any;
 
 export class TradingviewComponent implements AfterViewInit {
 
-  constructor(private router: Router) { }
+  symbol: string = "technical-analysis";
+  settings: any = {};
+  widgetId: string = '';
+
+  @ViewChild('containerDiv', {static: true}) containerDiv: ElementRef;
+
+  constructor(private router: Router,  private _elRef: ElementRef,) { }
 
   ngAfterViewInit(){
     new TradingView.widget(
@@ -36,5 +42,42 @@ export class TradingviewComponent implements AfterViewInit {
       "container_id": "tradingview_bac65"
     }
       );
+
+      setTimeout(() => {
+        this.widgetId = `${ this.symbol }_fundamentals`;
+
+        if (window.addEventListener) {
+          window.addEventListener( 'message', ( e: any ) => {
+            if( e && e.data ) {
+              console.log(e);
+              const payload = e.data;
+
+              if (payload.name === 'tv-widget-no-data' && payload.frameElementId === this.widgetId) {
+                this.containerDiv.nativeElement.style.display = 'none';
+                }
+              }
+            }, false,
+          );
+        }
+        this.settings = {
+          "interval": "5m",
+          "width": 425,
+          "isTransparent": true,
+          "height": 450,
+          "symbol": "OANDA:USDINR",
+          "showIntervalTabs": true,
+          "locale": "in",
+          "colorTheme": "dark"
+        };
+
+        const script = document.createElement( 'script' );
+        script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js';
+        script.async = true;
+        script.id = this.widgetId;
+        script.innerHTML = JSON.stringify( this.settings );
+        this.containerDiv.nativeElement.appendChild( script );
+        const brandingDiv = document.createElement( 'div' );
+      } );
   }
+
 }
