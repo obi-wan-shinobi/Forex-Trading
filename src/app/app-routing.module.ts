@@ -30,4 +30,3 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 export const routingComponents = [NewsComponent, TradingviewComponent, ForexapiComponent, ForexCrossRatesComponent, ScreenerComponent, HomeComponent, ChatDialogComponent, AboutComponent, TradingPlatformComponent]
-

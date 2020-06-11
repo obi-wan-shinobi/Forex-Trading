@@ -2,7 +2,6 @@
   <form #tradingForm="ngForm">
 
     {{tradingForm.value | json}}
-    {{base}}{{quote}}
 
     <div class="">
       <label for="">Base Currency</label>
@@ -36,4 +35,63 @@
   Time Zone: {{realData.Time_Zone}}<br>
   Bid: {{realData.Bid_price}}<br>
   Ask: {{realData.Ask_price}}<br>
+  Spread (pips): {{realData.Spread}}<br>
+
+  <div class="">
+    <button type="button" name="tradeButton" (click)="trade=true">Click here to trade</button>
+  </div>
+</div>
+
+
+<div class="" *ngIf="trade">
+  <form #tradeVolume="ngForm">
+    <select class="" name="buy-sell" [(ngModel)]='option'>
+      <option value="buy"><span>Buy</span></option>
+      <option value="sell"><span>Sell</span></option>
+    </select>
+    <div class="" *ngIf="option==='buy'">
+      <div class="">
+        <label for="custBuy">Buy</label>
+        <select class="" name="custBuy" [(ngModel)]="custBuy">
+          <option value="{{base}}"><span>{{base}}</span></option>
+          <option value="{{quote}}"><span>{{quote}}</span></option>
+        </select>
+        <label for="volume">Volume</label>
+        <input type="number" name="volume" value="" [(ngModel)]="buyVolume" placeholder="Enter amount">
+      </div>
+
+      <div class="">
+        <label for="custSell">Sell</label>
+        <select class="" name="custSell" [(ngModel)]="custSell">
+          <option value="{{base}}" *ngIf="custBuy===quote"><span>{{base}}</span></option>
+          <option value="{{quote}}" *ngIf="custBuy===base"><span>{{quote}}</span></option>
+        </select>
+        <label for="volume">Volume</label>
+        <p name="volume">{{buyPrice}}</p>
+      </div>
+    </div>
+
+    <div class="" *ngIf="option==='sell'">
+      <div class="">
+        <label for="custBuy">Sell</label>
+        <select class="" name="custBuy" [(ngModel)]="custBuy">
+          <option value="{{base}}"><span>{{base}}</span></option>
+          <option value="{{quote}}"><span>{{quote}}</span></option>
+        </select>
+        <label for="volume">Volume</label>
+        <input type="number" name="volume" value="" [(ngModel)]="sellVolume" placeholder="Enter amount">
+      </div>
+
+      <div class="">
+        <label for="custSell">Buy</label>
+        <select class="" name="custSell" [(ngModel)]="custSell">
+          <option value="{{base}}" *ngIf="custBuy===quote"><span>{{base}}</span></option>
+          <option value="{{quote}}" *ngIf="custBuy===base"><span>{{quote}}</span></option>
+        </select>
+        <label for="volume">Volume</label>
+        <p name="volume">{{sellPrice}}</p>
+      </div>
+    </div>
+  </form>
+  <button type="button" name="button" (click)="tradeInit()">Make Trade</button>
 </div>
