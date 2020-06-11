@@ -15,6 +15,15 @@ export class TradingPlatformComponent implements OnInit {
   public base: string;
   public quote: string;
 
+  public trade = false;
+  public option: string;
+  public buyVolume: Number;
+  public sellVolume: Number;
+  public sellPrice: number;
+  public buyPrice: number;
+  public custBuy: string;
+  public custSell: string;
+
   public currencies = [
     "EUR","USD","JPY","GBP","CHF","AUD","CAD","NZD","CNY",
     "TRY","SEK","NOK","DKK","ZAR","HKD","SGD","THB","MXN",
@@ -38,8 +47,12 @@ export class TradingPlatformComponent implements OnInit {
     const rate = temp["5. Exchange Rate"];
     const timestamp = temp["6. Last Refreshed"];
     const timeZone = temp["7. Time Zone"];
-    const bid = temp["8. Bid Price"];
-    const ask = temp["9. Ask Price"];
+    var bid = temp["8. Bid Price"];
+    var ask = temp["9. Ask Price"];
+
+    bid = Number(Number(bid).toFixed(4));
+    ask = Number(Number(ask).toFixed(4));
+    const spread = Number(Number((ask-bid)*10000/ask).toFixed(4));
 
     const realData = new RealTimeData(
       from_code,
@@ -50,15 +63,35 @@ export class TradingPlatformComponent implements OnInit {
       timestamp,
       timeZone,
       bid,
-      ask
+      ask,
+      spread
     );
-    console.log(realData.Ask_price);
     return realData;
   }
 
   async ngOnInit(){
     this.realData = await this.getRates();
     console.log(this.currencies);
+  }
+
+  tradeInit() {
+    this.trade = true;
+    if(this.option == 'buy') {
+      if(this.custBuy == this.base) {
+        this.buyPrice = Number(Number(this.realData.Bid_price * this.buyVolume).toFixed(4));
+      }
+      else {
+        this.buyPrice = Number(Number(1/this.realData.Bid_price * this.buyVolume).toFixed(4));
+      }
+    }
+    else {
+      if(this.custBuy == this.base) {
+        this.sellPrice = Number(Number(this.realData.Ask_price * this.sellVolume).toFixed(4));
+      }
+      else {
+        this.sellPrice = Number(Number(1/this.realData.Ask_price * this.sellVolume).toFixed(4));
+      }
+    }
   }
 
   async show() {

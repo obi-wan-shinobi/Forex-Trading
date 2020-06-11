@@ -11,7 +11,8 @@ export class RealTimeData {
     public Last_Refreshed: Date,
     public Time_Zone: string,
     public Bid_price: number,
-    public Ask_price: number
+    public Ask_price: number,
+    public Spread: number
   ) {}
 }
 
