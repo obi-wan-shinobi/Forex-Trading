@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'forexapi', component: ForexapiComponent},
   {path: 'screener', component: ScreenerComponent},
   {path: 'chatbot', component: ChatDialogComponent},
-  {path: 'about', component: AboutComponent}
+  {path: 'about', component: AboutComponent},
   {path: 'trading', component: TradingPlatformComponent}
 ];
 
