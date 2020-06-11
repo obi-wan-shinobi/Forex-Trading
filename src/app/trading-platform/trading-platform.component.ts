@@ -17,8 +17,8 @@ export class TradingPlatformComponent implements OnInit {
 
   public trade = false;
   public option: string;
-  public buyVolume: Number;
-  public sellVolume: Number;
+  public buyVolume;
+  public sellVolume;
   public sellPrice: number;
   public buyPrice: number;
   public custBuy: string;
@@ -78,6 +78,7 @@ export class TradingPlatformComponent implements OnInit {
     this.trade = true;
     if(this.option == 'buy') {
       if(this.custBuy == this.base) {
+        console.log(typeof(this.buyVolume));
         this.buyPrice = Number(Number(this.realData.Bid_price * this.buyVolume).toFixed(4));
       }
       else {
