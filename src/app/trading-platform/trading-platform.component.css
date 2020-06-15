@@ -4,15 +4,32 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-.smallTable,th,td{
+.smallTable{
 	border-collapse: collapse;
-	column-width: 700px; 
+}
+.smallTable, th, td{
 	color: #fff; 
 	text-align: left;
 	border: 1px solid #fff;
 	padding: 20px 0px 0px 20px;
 }
+table{
+	border: none;
+}
 table th,td{
 	width: 200px;
 	border: none;
+}
+select{
+	text-align: center;
+}
+select option{
+	text-align: center;
+}
+label{
+	margin-top: 5%;
+}
+input{
+	margin-top: 5%;
+	width: 150px;
 }

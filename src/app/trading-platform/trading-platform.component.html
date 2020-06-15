@@ -81,62 +81,76 @@
   </td>
   <td>
     <div *ngIf="trade" style="margin-left: 30%;">
-  <form #tradeVolume="ngForm">
-    <select class="btn" name="buy-sell" [(ngModel)]='option' style="width: 150px; height: 40px; text-align: center;">
-      <option value="buy"><span>Buy</span></option>
-      <option value="sell"><span>Sell</span></option>
-    </select>
-    <div *ngIf="option==='buy'">
-      <div>
-        <br>
-        <label for="custBuy">Buy</label>
-        <select class="btn" name="custBuy" [(ngModel)]="custBuy">
-          <option value="{{base}}"><span>{{base}}</span></option>
-          <option value="{{quote}}"><span>{{quote}}</span></option>
+      <form #tradeVolume="ngForm">
+        <select class="btn" name="buy-sell" [(ngModel)]='option' style="width: 150px; height: 40px; text-align: center;">
+          <option value="buy"><span>Buy</span></option>
+          <option value="sell"><span>Sell</span></option>
         </select>
-        <label for="volume">Volume</label>
-        <input type="number" name="volume" [(ngModel)]="buyVolume" placeholder="Enter amount">
-      </div>
-
-      <div>
-        <label for="custSell">Sell</label>
-        <select class="btn" name="custSell" [(ngModel)]="custSell">
-          <option value="{{base}}" *ngIf="custBuy===quote"><span>{{base}}</span></option>
-          <option value="{{quote}}" *ngIf="custBuy===base"><span>{{quote}}</span></option>
-        </select>
-        <label for="volume">Volume</label>
-        <input type="number" name="bVolume" *ngShow="buyVolume.length" value="{{buyPrice}}" disabled>
-        <p name="volume">{{buyPrice}}</p>
-      </div>
+        <div *ngIf="option==='buy'">
+            <br>
+            <table>
+              <tr>
+                <td> <label for="custBuy">Buy</label></td>
+                <td>
+                  <select class="btn" name="custBuy" [(ngModel)]="custBuy">
+                    <option value="{{base}}"><span>{{base}}</span></option>
+                    <option value="{{quote}}"><span>{{quote}}</span></option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="volume">Volume </label></td>
+                <td><input type="number" name="volume" [(ngModel)]="buyVolume"></td>
+              </tr>
+              <tr>
+                <td><label for="custSell">Sell</label></td>
+                <td>
+                  <select class="btn" name="custSell" [(ngModel)]="custSell" style="width: 100px;">
+                    <option value="{{base}}" *ngIf="custBuy===quote"><span>{{base}}</span></option>
+                    <option value="{{quote}}" *ngIf="custBuy===base"><span>{{quote}}</span></option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="volume">Volume </label></td>
+                <td><input type="text" value={{buyPrice}} disabled="disabled" style="color: #000;"></td>
+              </tr>
+            </table>
+        </div>
+        <div *ngIf="option==='sell'">
+          <table align="center">
+            <tr>
+              <td><label for="custBuy">Sell</label></td>
+              <td>
+                <select class="btn" name="custBuy" [(ngModel)]="custBuy">
+                  <option value="{{base}}"><span>{{base}}</span></option>
+                  <option value="{{quote}}"><span>{{quote}}</span></option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="volume">Volume</label></td>
+              <td><input type="number" name="volume" value="" [(ngModel)]="sellVolume"></td>
+            </tr>
+            <tr>
+              <td><label for="custSell">Buy</label></td>
+              <td>
+                <select class="btn" name="custSell" [(ngModel)]="custSell" style="width: 100px;">
+                  <option value="{{base}}" *ngIf="custBuy===quote"><span>{{base}}</span></option>
+                  <option value="{{quote}}" *ngIf="custBuy===base"><span>{{quote}}</span></option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="volume">Volume</label></td>
+              <td><input type="text" value={{sellPrice}} disabled="disabled" style="color: #000;"></td>
+            </tr>
+          </table>
+        </div>
+      </form>
+      <br>
+      <button class="btn" name="button" (click)="tradeInit()"><span>Make Trade</span></button>
     </div>
-
-    <div *ngIf="option==='sell'">
-      <div>
-        <br>
-        <label for="custBuy">Sell</label>
-        <select class="btn" name="custBuy" [(ngModel)]="custBuy">
-          <option value="{{base}}"><span>{{base}}</span></option>
-          <option value="{{quote}}"><span>{{quote}}</span></option>
-        </select>
-        <label for="volume">Volume</label>
-        <input type="number" name="volume" value="" [(ngModel)]="sellVolume" placeholder="Enter amount">
-      </div>
-
-      <div>
-        <label for="custSell">Buy</label>
-        <select class="btn" name="custSell" [(ngModel)]="custSell">
-          <option value="{{base}}" *ngIf="custBuy===quote"><span>{{base}}</span></option>
-          <option value="{{quote}}" *ngIf="custBuy===base"><span>{{quote}}</span></option>
-        </select>
-        <label for="volume">Volume</label>
-        <p name="volume">{{sellPrice}}</p>
-      </div>
-    </div>
-  </form>
-  <br>
-  <button class="btn" name="button" (click)="tradeInit()"><span>Make Trade</span></button>
-</div>
-
   </td>
 </tr>
 </table>
