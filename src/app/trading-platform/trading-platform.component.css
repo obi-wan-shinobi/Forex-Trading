@@ -1,0 +1,18 @@
+.center{
+	display: block;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+.smallTable,th,td{
+	border-collapse: collapse;
+	column-width: 700px; 
+	color: #fff; 
+	text-align: left;
+	border: 1px solid #fff;
+	padding: 20px 0px 0px 20px;
+}
+table th,td{
+	width: 200px;
+	border: none;
+}
