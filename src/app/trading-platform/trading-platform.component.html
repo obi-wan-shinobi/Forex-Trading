@@ -5,7 +5,7 @@
   <br>
 
   
-  <table style="width: 80%; margin-left: 10%;">
+  <table style="width: 90%; margin-left: 2%;">
     <tr valign="top">
     <td>
     <form #tradingForm="ngForm" style="padding-left: 20px;">
@@ -24,52 +24,52 @@
     <button class="btn" name="button" (click)="show()" style="margin-left: 175px;"><span>Get Update</span></button>
   </form>
   </td>
-  <td rowspan="2">
+  <td rowspan="2" style="margin-left: 10%;">
     <div class="heading" *ngIf="showData">
   <table class="smallTable">
-    <tr>
-      <th rowspan="2">Base Currency</th>
-      <th>Symbol</th>
-        <td>{{realData.From_Currency_Code}}</td>
+    <tr class="bordered">
+      <th class="bordered" rowspan="2">Base Currency</th>
+      <th class="bordered">Symbol</th>
+        <td class="bordered">{{realData.From_Currency_Code}}</td>
     </tr>
-    <tr>
-      <th>Name</th>
-      <td>{{realData.From_Currency_Name}}</td>
+    <tr class="bordered">
+      <th class="bordered">Name</th>
+      <td class="bordered">{{realData.From_Currency_Name}}</td>
     </tr>
-    <tr>
-      <th rowspan="2">Quote Currency</th>
-      <th>Symbol</th>
-        <td>{{realData.To_Currency_Code}}</td>
+    <tr class="bordered">
+      <th class="bordered" rowspan="2">Quote Currency</th>
+      <th class="bordered">Symbol</th>
+        <td class="bordered">{{realData.To_Currency_Code}}</td>
     </tr>
-    <tr>
-      <th>Name</th>
-      <td>{{realData.To_Currency_Name}}</td>
+    <tr class="bordered">
+      <th class="bordered">Name</th>
+      <td class="bordered">{{realData.To_Currency_Name}}</td>
     </tr>
-    <tr>
-      <th colspan="2">Exchange Rate</th>
-      <td>{{realData.Exchange_Rate}}</td>
+    <tr class="bordered">
+      <th class="bordered" colspan="2">Exchange Rate</th>
+      <td class="bordered">{{realData.Exchange_Rate}}</td>
     </tr>
-    <tr>
-      <th colspan="2">Last Updated</th>
-      <td>{{realData.Last_Refreshed | date: "HH:mm"}}</td>
+    <tr class="bordered">
+      <th class="bordered" colspan="2">Last Updated</th>
+      <td class="bordered">{{realData.Last_Refreshed | date: "HH:mm"}}</td>
     </tr>
-    <tr>
-      <th colspan="2">Time Zone</th>
-      <td>{{realData.Time_Zone}}</td>
+    <tr class="bordered">
+      <th class="bordered" colspan="2">Time Zone</th>
+      <td class="bordered">{{realData.Time_Zone}}</td>
     </tr>
-    <tr>
-      <th colspan="2">Bid</th>
-      <td>{{realData.Bid_price}}</td>
+    <tr class="bordered">
+      <th class="bordered" colspan="2">Bid</th>
+      <td class="bordered">{{realData.Bid_price}}</td>
     </tr>
-    <tr>
-      <th colspan="2">Ask</th>
-      <td>{{realData.Ask_price}}</td>
+    <tr class="bordered">
+      <th class="bordered" colspan="2">Ask</th>
+      <td class="bordered">{{realData.Ask_price}}</td>
     </tr>
-    <tr>
-      <th colspan="2">Spread (Pips)</th>
-      <td>{{realData.Spread}}</td>
+    <tr class="bordered">
+      <th class="bordered" colspan="2">Spread (Pips)</th>
+      <td class="bordered">{{realData.Spread}}</td>
     </tr>
-    <tr>
+    <tr class="bordered">
       <td colspan="3">
         <button class="btn" name="tradeButton" (click)="trade=true" style="margin: 0% 0% 5% 25%;"><span>Click here to trade</span></button>
       </td>
@@ -80,9 +80,9 @@
 
   </td>
   <td>
-    <div *ngIf="trade" style="margin-left: 30%;">
+    <div *ngIf="trade">
       <form #tradeVolume="ngForm">
-        <select class="btn" name="buy-sell" [(ngModel)]='option' style="width: 150px; height: 40px; text-align: center;">
+        <select class="btn" name="buy-sell" [(ngModel)]='option' style="width: 400px; height: 40px; text-align: center;">
           <option value="buy"><span>Buy</span></option>
           <option value="sell"><span>Sell</span></option>
         </select>
@@ -92,7 +92,7 @@
               <tr>
                 <td> <label for="custBuy">Buy</label></td>
                 <td>
-                  <select class="btn" name="custBuy" [(ngModel)]="custBuy">
+                  <select class="btn" name="custBuy" [(ngModel)]="custBuy" style="width: 150px;">
                     <option value="{{base}}"><span>{{base}}</span></option>
                     <option value="{{quote}}"><span>{{quote}}</span></option>
                   </select>
@@ -100,12 +100,13 @@
               </tr>
               <tr>
                 <td><label for="volume">Volume </label></td>
-                <td><input type="number" name="volume" [(ngModel)]="buyVolume"></td>
+                <!-- <td><input type="number" name="volume" [(ngModel)]="buyVolume"></td> -->
+                <td><input type="range" name="volume" min="0" max="10" [(ngModel)]="buyVolume">{{buyVolume}}</td>
               </tr>
               <tr>
                 <td><label for="custSell">Sell</label></td>
                 <td>
-                  <select class="btn" name="custSell" [(ngModel)]="custSell" style="width: 100px;">
+                  <select class="btn" name="custSell" [(ngModel)]="custSell" style="width: 150px;">
                     <option value="{{base}}" *ngIf="custBuy===quote"><span>{{base}}</span></option>
                     <option value="{{quote}}" *ngIf="custBuy===base"><span>{{quote}}</span></option>
                   </select>
@@ -113,7 +114,7 @@
               </tr>
               <tr>
                 <td><label for="volume">Volume </label></td>
-                <td><input type="text" value={{buyPrice}} disabled="disabled" style="color: #000;"></td>
+                <td><input type="text" value={{buyPrice}} disabled="disabled"></td>
               </tr>
             </table>
         </div>
@@ -122,7 +123,7 @@
             <tr>
               <td><label for="custBuy">Sell</label></td>
               <td>
-                <select class="btn" name="custBuy" [(ngModel)]="custBuy">
+                <select class="btn" name="custBuy" [(ngModel)]="custBuy" style="width: 150px;">
                   <option value="{{base}}"><span>{{base}}</span></option>
                   <option value="{{quote}}"><span>{{quote}}</span></option>
                 </select>
@@ -130,12 +131,13 @@
             </tr>
             <tr>
               <td><label for="volume">Volume</label></td>
-              <td><input type="number" name="volume" value="" [(ngModel)]="sellVolume"></td>
+              <!-- <td><input type="number" name="volume" value="" [(ngModel)]="sellVolume"></td> -->
+              <td><input type="range" name="volume" min="0" max="10" [(ngModel)]="sellVolume">{{sellVolume}}</td>
             </tr>
             <tr>
               <td><label for="custSell">Buy</label></td>
               <td>
-                <select class="btn" name="custSell" [(ngModel)]="custSell" style="width: 100px;">
+                <select class="btn" name="custSell" [(ngModel)]="custSell" style="width: 150px;">
                   <option value="{{base}}" *ngIf="custBuy===quote"><span>{{base}}</span></option>
                   <option value="{{quote}}" *ngIf="custBuy===base"><span>{{quote}}</span></option>
                 </select>
@@ -143,13 +145,13 @@
             </tr>
             <tr>
               <td><label for="volume">Volume</label></td>
-              <td><input type="text" value={{sellPrice}} disabled="disabled" style="color: #000;"></td>
+              <td><input type="text" value={{sellPrice}} disabled="disabled"></td>
             </tr>
           </table>
         </div>
       </form>
       <br>
-      <button class="btn" name="button" (click)="tradeInit()"><span>Make Trade</span></button>
+      <button class="btn" name="button" (click)="tradeInit()" style="width: 400px;"><span>Make Trade</span></button>
     </div>
   </td>
 </tr>

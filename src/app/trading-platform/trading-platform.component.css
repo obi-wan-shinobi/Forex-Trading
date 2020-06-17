@@ -13,12 +13,19 @@
 	border: 1px solid #fff;
 	padding: 20px 0px 0px 20px;
 }
+.smallTable td{
+	vertical-align: middle;
+}
 table{
 	border: none;
 }
 table th,td{
-	width: 200px;
+	width: 150px;
 	border: none;
+}
+.bordered{
+	border-collapse: collapse;
+	border: 1px solid #fff;
 }
 select{
 	text-align: center;
@@ -32,4 +39,13 @@ label{
 input{
 	margin-top: 5%;
 	width: 150px;
+	height: 25px;
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	border: 2px solid transparent;
+	border-radius: 20px;
+	background-image: linear-gradient(#42455a,#42455a),radial-gradient(circle at top left,#fd00da,#19d7f8);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
 }
