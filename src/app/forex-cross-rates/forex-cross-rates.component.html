@@ -8,8 +8,9 @@
     <th>Currency</th>
   </tr>
   <tr *ngFor="let currency of currencies">
-    <td *ngIf="user_currencies.includes(currency)"><input class="btn" type="checkbox" (click)="AddCurrency(currency)" checked>{{currency}}</td>
-    <td *ngIf="!user_currencies.includes(currency)"><input class="btn" type="checkbox" (click)="AddCurrency(currency)">{{currency}}</td>
+    <td *ngIf="user_currencies.includes(currency)"><input class="btn" type="checkbox" checked>{{currency}}</td>
+    <td *ngIf="!user_currencies.includes(currency)"><input class="btn" type="checkbox">{{currency}}</td>
+    <button (click)="AddCurrency(currency)">Add</button>
   </tr>
 </table>
 <div class="tradingview-widget-container" style="height: 300px;   margin-left: auto;
