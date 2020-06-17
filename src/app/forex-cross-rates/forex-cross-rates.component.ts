@@ -19,12 +19,15 @@ export class ForexCrossRatesComponent implements AfterViewInit {
     "SAR","RUB","ILS"
   ] ;
 
+  public user_currencies = [
+    "EUR","USD","JPY","GBP","CHF","AUD","CAD","NZD","CNY","INR"
+  ]
+
   @ViewChild('containerDiv', {static: true}) containerDiv: ElementRef;
 
   constructor( private _elRef: ElementRef, private router: Router ) { }
 
-  ngAfterViewInit() {
-
+  forexCrossRates(user_currencies) {
     setTimeout(() => {
       this.widgetId = `${ this.symbol }_fundamentals`;
 
@@ -44,18 +47,7 @@ export class ForexCrossRatesComponent implements AfterViewInit {
       this.settings = {
         "width": 840,
         "height": 400,
-        "currencies": [
-          "EUR",
-          "USD",
-          "JPY",
-          "GBP",
-          "CHF",
-          "AUD",
-          "CAD",
-          "NZD",
-          "CNY",
-          "INR"
-        ],
+        "currencies": this.user_currencies,
         "isTransparent:": true,
         "colorTheme": "dark",
         "locale": "in",
@@ -70,5 +62,25 @@ export class ForexCrossRatesComponent implements AfterViewInit {
       this.containerDiv.nativeElement.appendChild( script );
       const brandingDiv = document.createElement( 'div' );
     } );
+  }
+
+  ngAfterViewInit() {
+    this.forexCrossRates(this.user_currencies)
 }
+
+  AddCurrency(currency) {
+    console.log(currency)
+    if(this.user_currencies.includes(currency)) {
+      var index = this.user_currencies.indexOf(currency);
+      this.user_currencies.splice(index, 1);
+      console.log("Removed:"+currency);
+      console.log("Updated watchlist:"+this.user_currencies);
+    }
+    else {
+      this.user_currencies.push(currency);
+      console.log("Pushed:"+currency);
+      console.log("Updated watchlist:"+this.user_currencies);
+    }
+    this.forexCrossRates(this.user_currencies)
+  }
 }

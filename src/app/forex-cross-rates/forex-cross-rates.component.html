@@ -3,9 +3,15 @@
 <h1 style="padding-left: 20px;">Forex Cross Rates</h1>
 <hr>
 <br>
-<select class="btn" name="">
-  <option value="{{currency}}" *ngFor="let currency of currencies"><span>{{currency}}</span></option>
-</select>
+<table>
+  <tr>
+    <th>Currency</th>
+  </tr>
+  <tr *ngFor="let currency of currencies">
+    <td *ngIf="user_currencies.includes(currency)"><input class="btn" type="checkbox" (click)="AddCurrency(currency)" checked>{{currency}}</td>
+    <td *ngIf="!user_currencies.includes(currency)"><input class="btn" type="checkbox" (click)="AddCurrency(currency)">{{currency}}</td>
+  </tr>
+</table>
 <div class="tradingview-widget-container" style="height: 300px;   margin-left: auto;
   margin-right: auto;" #containerDiv>
   <div class="tradingview-widget-container__widget"></div>
