@@ -214,10 +214,6 @@ body{
   height: 100%;
   background: #42455a;
 }
-header{
-  color: #fff;
-  text-align: center;
-}
 footer{
   position: fixed;
   left: 0;
@@ -269,5 +265,6 @@ select::-moz-focus-inner {
 button::-moz-focus-inner {
   border: 0;
 }
+
 
 
