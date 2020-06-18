@@ -9,18 +9,27 @@ import { HomeComponent } from "./home/home.component";
 import { ChatDialogComponent } from "./chat-dialog/chat-dialog.component";
 import { AboutComponent } from "./about/about.component";
 import { TradingPlatformComponent } from './trading-platform/trading-platform.component';
+import { HistoricalComponent } from './historical/historical.component';
+import { ChartsComponent } from './charts/charts.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'news', component: NewsComponent},
-  {path: 'tradingview', component: TradingviewComponent},
+  {
+    path: 'charts',
+    component: ChartsComponent,
+    children: [
+      {path: 'technicalanalysis', component: TradingviewComponent},
+      {path: 'historical', component: HistoricalComponent},
+    ]
+  },
   {path: 'forexcrossrates', component: ForexCrossRatesComponent},
   {path: 'forexapi', component: ForexapiComponent},
   {path: 'screener', component: ScreenerComponent},
   {path: 'chatbot', component: ChatDialogComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'trading', component: TradingPlatformComponent}
+  {path: 'trading', component: TradingPlatformComponent},
 ];
 
 @NgModule({
@@ -29,4 +38,16 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [NewsComponent, TradingviewComponent, ForexapiComponent, ForexCrossRatesComponent, ScreenerComponent, HomeComponent, ChatDialogComponent, AboutComponent, TradingPlatformComponent]
+export const routingComponents = [
+  NewsComponent,
+  TradingviewComponent,
+  ForexapiComponent,
+  ForexCrossRatesComponent,
+  ScreenerComponent,
+  HomeComponent,
+  ChatDialogComponent,
+  AboutComponent,
+  TradingPlatformComponent,
+  HistoricalComponent,
+  ChartsComponent
+]
