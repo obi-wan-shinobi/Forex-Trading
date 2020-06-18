@@ -13,8 +13,9 @@
 	border: 1px solid #fff;
 	padding: 20px 0px 0px 20px;
 }
-.smallTable td{
-	vertical-align: middle;
+.smallTable tr:hover{
+   	text-shadow: 1px 2px #000000;
+   	box-shadow: 0 0px 10px #b5fff4;
 }
 table{
 	border: none;
@@ -24,8 +25,9 @@ table th,td{
 	border: none;
 }
 .bordered{
+	vertical-align: middle;
 	border-collapse: collapse;
-	border: 1px solid #fff;
+	border: 1px solid #fff !important;
 }
 select{
 	text-align: center;

@@ -1,0 +1,83 @@
+.banner {
+  width: 80%;
+  height: 70%;
+  top: 30%;
+  left: 8%;
+  position: absolute;
+}
+.app-text {
+  width: 80%;
+  float: left;
+  position:relative;
+  animation:animateleft 1.5s
+}
+@keyframes animateleft{
+  from{left:-300px;opacity:0} to{left:0;opacity:1}
+}
+.app-text h1{
+  font-size: 50px;
+  font-family: sans-serif;
+  width: 640px;
+  position: relative;
+  margin-left: 40px;
+}
+.app-text p{
+  width: 650px;
+  font-size: 15px;
+  margin: 30px 0 30px 40px;
+  line-height: 25px;
+  color: #919191;
+}
+.app-picture{
+  width: 50%;
+  float: right;
+}
+.app-picture img{
+  width: 100%;
+  margin-top: -500px;
+  padding-left: 50px;
+  position:relative;
+  animation:animateright 1.5s
+}
+@keyframes animateright{
+  from{right:-300px;opacity:0} to{right:0;opacity:1}
+}
+
+.banner-right{
+  width: 80%;
+  height: 70%;
+  top: 80%;
+  right: 8%;
+  position: absolute;
+}
+.app-text-right {
+  width: 80%;
+  float: right;
+  position:relative;
+  animation:animateright 1.5s
+}
+.app-text-right h1{
+  font-size: 50px;
+  font-family: sans-serif;
+  width: 640px;
+  position: relative;
+  margin-right: 40px;
+}
+.app-text-right p{
+  width: 650px;
+  font-size: 15px;
+  margin: 30px 0 30px 40px;
+  line-height: 25px;
+  color: #919191;
+}
+.app-picture-left{
+  width: 50%;
+  float: left;
+}
+.app-picture-left img{
+  width: 100%;
+  margin-top: -500px;
+  padding-right: 50px;
+  position:relative;
+  animation:animateleft 1.5s
+}

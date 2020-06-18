@@ -214,10 +214,6 @@ body{
   height: 100%;
   background: #42455a;
 }
-header{
-  color: #fff;
-  text-align: center;
-}
 footer{
   position: fixed;
   left: 0;
@@ -239,16 +235,6 @@ footer{
 .btn:hover{
   color: #19dafa !important;
 }
-.btn-grad{
-   text-decoration: none;
-   color: #fff;
-   border: 2px solid transparent;
-   border-radius: 20px;
-   background-image: linear-gradient(to right,#fd00da,#19dafa);
-   /*background-color: #fd00da;*/
-   background-origin: border-box;
-   background-clip: content-box, border-box;
-}
 span{
   display: block;
   padding: 8px 22px;
@@ -269,5 +255,6 @@ select::-moz-focus-inner {
 button::-moz-focus-inner {
   border: 0;
 }
+
 
 
