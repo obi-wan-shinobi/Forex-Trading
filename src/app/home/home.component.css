@@ -8,6 +8,11 @@
 .app-text {
   width: 80%;
   float: left;
+  position:relative;
+  animation:animateleft 1.5s
+}
+@keyframes animateleft{
+  from{left:-300px;opacity:0} to{left:0;opacity:1}
 }
 .app-text h1{
   font-size: 50px;
@@ -31,4 +36,9 @@
   width: 100%;
   margin-top: -250px;
   padding-left: 50px;
+  position:relative;
+  animation:animateright 1.5s
+}
+@keyframes animateright{
+  from{right:-300px;opacity:0} to{right:0;opacity:1}
 }
