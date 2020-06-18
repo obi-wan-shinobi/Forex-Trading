@@ -1,0 +1,19 @@
+<div class="">
+  {{base}}
+  {{quote}}
+  Select Base:
+  <select [(ngModel)]="base" class="btn">
+    <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
+  </select>
+
+  Select Quote:
+  <select [(ngModel)]="quote" class="btn">
+    <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
+  </select>
+
+  <button class="btn" type="button" name="button" (click)="getChart(base,quote)">Display Charts</button>
+</div>
+
+<div *ngIf="chart" style="width:1300px">
+  <canvas id="canvas" width="200px" height="100px">{{chart}}</canvas>
+</div>

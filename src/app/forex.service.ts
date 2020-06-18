@@ -18,4 +18,14 @@ export class ForexService {
   specificSymbols(symbols: string = "USD", base: string="USD"): Promise<any> {
     return this._http.get("https://api.exchangeratesapi.io/latest?base="+base+"&symbols="+symbols).toPromise();
   }
+
+  historicalData(base: string="USD", symbols: string="INR"): Promise<any> {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+
+    var dt = yyyy + '-' + mm + '-' + dd;
+    return this._http.get("https://api.exchangeratesapi.io/history?base="+base+"&start_at=2019-01-01&end_at="+dt+"&symbols="+symbols).toPromise();
+  }
 }
