@@ -11,6 +11,7 @@ export class ForexCrossRatesComponent implements AfterViewInit {
   symbol: string = "forex-cross-rates";
   settings: any = {};
   widgetId: string = '';
+  counter = 0;
 
   public currencies = [
     "EUR","USD","JPY","GBP","CHF","AUD","CAD","NZD","CNY",
@@ -25,7 +26,8 @@ export class ForexCrossRatesComponent implements AfterViewInit {
 
   @ViewChild('containerDiv', {static: true}) containerDiv: ElementRef;
 
-  constructor( private _elRef: ElementRef, private router: Router ) { }
+  constructor( private _elRef: ElementRef, private router: Router ) {
+  }
 
   forexCrossRates(user_currencies) {
     setTimeout(() => {
@@ -66,6 +68,7 @@ export class ForexCrossRatesComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.forexCrossRates(this.user_currencies)
+    console.log(this.containerDiv)
 }
 
   AddCurrency(currency) {
@@ -82,5 +85,7 @@ export class ForexCrossRatesComponent implements AfterViewInit {
       console.log("Updated watchlist:"+this.user_currencies);
     }
     this.forexCrossRates(this.user_currencies)
+    console.log("AddCurrency")
+    console.log(this.containerDiv)
   }
 }
