@@ -69,7 +69,12 @@ export class ForexCrossRatesComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.forexCrossRates(this.user_currencies)
     console.log(this.containerDiv)
-}
+  }
+  removeForexScriptTag() {
+    const forexChartScript = this._elRef.nativeElement.querySelector(`#${this.widgetId}`);
+    console.log(forexChartScript);
+    forexChartScript.remove();
+  }
 
   AddCurrency(currency) {
     console.log(currency)
@@ -84,6 +89,7 @@ export class ForexCrossRatesComponent implements AfterViewInit {
       console.log("Pushed:"+currency);
       console.log("Updated watchlist:"+this.user_currencies);
     }
+    this.removeForexScriptTag();
     this.forexCrossRates(this.user_currencies)
     console.log("AddCurrency")
     console.log(this.containerDiv)
