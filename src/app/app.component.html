@@ -1,23 +1,27 @@
+<!-- Start of Menu Bar -->
 <div class="menu"  style="background: linear-gradient(to right, #db1bf6, #19d7f8);">
-<ul>
-  <li><a routerLink='/'><i class="fa fa-home" style="font-size: 24px;"></i>&nbsp;Home</a></li>
-  <li><a routerLink='/forexapi'><i class="fa fa-usd" style="font-size: 24px;"></i>&nbsp;Forex</a></li>
-  <li><a routerLink='/news'><i class="fa fa-newspaper-o" style="font-size: 24px;"></i>&nbsp;News</a></li>
-  <li>
-    <div class="dropdown">
-      <i class="fa fa-area-chart" style="font-size: 24px;"></i>
-      <button class="dropbtn">&nbsp;Charts&nbsp;<i class="fa fa-caret-down"></i></button>
-      <div class="dropdown-content">
-        <a routerLink='/technicalanalysis'>Technical<br>Analysis</a>
-        <a routerLink='/historical'>History</a>
+  <ul>
+    <li><a routerLink='/'><i class="fa fa-home" style="font-size: 24px;"></i>&nbsp;Home</a></li>
+    <li><a routerLink='/forexapi'><i class="fa fa-usd" style="font-size: 24px;"></i>&nbsp;Forex</a></li>
+    <li><a routerLink='/news'><i class="fa fa-newspaper-o" style="font-size: 24px;"></i>&nbsp;News</a></li>
+    <li>
+      <!-- Dropdown menu for Charts -->
+      <div class="dropdown">
+        <i class="fa fa-area-chart" style="font-size: 24px;"></i>
+        <button class="dropbtn">&nbsp;Charts&nbsp;<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a routerLink='/technicalanalysis'>Technical<br>Analysis</a>
+          <a routerLink='/historical'>History</a>
+        </div>
       </div>
-    </div>
-  </li>
-  <li><a routerLink='/trading'><i class="fa fa-calculator" style="font-size: 24px;"></i>&nbsp;Trading Platform</a></li>
-  <li><a routerLink='/forexcrossrates'><i class="fa fa-crosshairs" style="font-size: 24px;"></i>&nbsp;Cross Rates</a></li>
-  <li><a routerLink='/screener'><i class="fa fa-table" style="font-size: 24px;"></i>&nbsp;Screener</a></li>
-  <li><a routerLink='/chatbot'><i class="fa fa-comments-o" style="font-size: 24px;"></i>&nbsp;Chat Bot</a></li>
-  <li><a routerLink='/about'><i class="fa fa-info-circle" style="font-size: 24px;"></i>&nbsp;About Us</a></li>
-</ul>
+      <!-- End of Dropdown menu -->
+    </li>
+    <li><a routerLink='/trading'><i class="fa fa-calculator" style="font-size: 24px;"></i>&nbsp;Trading Platform</a></li>
+    <li><a routerLink='/forexcrossrates'><i class="fa fa-crosshairs" style="font-size: 24px;"></i>&nbsp;Cross Rates</a></li>
+    <li><a routerLink='/screener'><i class="fa fa-table" style="font-size: 24px;"></i>&nbsp;Screener</a></li>
+    <li><a routerLink='/chatbot'><i class="fa fa-comments-o" style="font-size: 24px;"></i>&nbsp;Chat Bot</a></li>
+    <li><a routerLink='/about'><i class="fa fa-info-circle" style="font-size: 24px;"></i>&nbsp;About Us</a></li>
+  </ul>
 </div>
+<!-- End of Menu Bar -->
 <router-outlet></router-outlet>
