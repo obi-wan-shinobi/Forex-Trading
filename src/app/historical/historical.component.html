@@ -1,8 +1,8 @@
 <div class="heading">
-<hr>
-<h1 style="padding-left: 20px;">History Chart</h1>
-<hr>
-<br>
+  <hr>
+  <h1 style="padding-left: 20px;">History Chart</h1>
+  <hr>
+  <br>
   <p>Select Base:&nbsp;</p>
   <select [(ngModel)]="base" class="btn">
     <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
@@ -11,10 +11,10 @@
   <select [(ngModel)]="quote" class="btn">
     <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
   </select>
-
   <button class="btn" type="button" name="button" (click)="getChart(base,quote)"><span>Display Charts</span></button>
-
-<div class="center" *ngIf="chart" style="width:1300px;">
-  <canvas id="canvas" width="200px" height="100px" style="background-color: #1e222d;">{{chart}}</canvas>
-</div>
+  <!-- Start of Historical Chart -->
+  <div class="center" *ngIf="chart" style="width:1300px;">
+    <canvas id="canvas" width="200px" height="100px" style="background-color: #1e222d;">{{chart}}</canvas>
+  </div>
+  <!-- End of Historical Chart -->
 </div>

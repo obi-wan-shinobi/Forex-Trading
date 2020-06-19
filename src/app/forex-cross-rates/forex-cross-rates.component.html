@@ -1,20 +1,22 @@
 <div class="heading">
-<hr>
-<h1 style="padding-left: 20px;">Forex Cross Rates</h1>
-<hr>
-<br>
-<table>
-  <tr>
-    <th style="transform: rotate(270deg);">Currency<hr style="color: #fff;"></th>
-    <div *ngFor="let currency of currencies">
-    	<tr *ngIf="user_currencies.includes(currency)"><input class="btn" type="checkbox" checked (click)="AddCurrency(currency)">&nbsp;{{currency}}</tr>
-    	<tr *ngIf="!user_currencies.includes(currency)"><input class="btn" type="checkbox" (click)="AddCurrency(currency)">&nbsp;{{currency}}</tr>	
-    </div>
-    <td style="text-align: center; padding-left: 40%;">
-    	<div class="tradingview-widget-container" #containerDiv>
-  		<div class="tradingview-widget-container__widget"></div>
-		</div>
-    </td>
-  </tr>
-</table>
+  <hr>
+  <h1 style="padding-left: 20px;">Forex Cross Rates</h1>
+  <hr>
+  <br>
+  <table>
+    <tr>
+      <th style="transform: rotate(270deg);">Currency<hr style="color: #fff;"></th>
+      <div *ngFor="let currency of currencies">
+      	<tr *ngIf="user_currencies.includes(currency)"><input class="btn" type="checkbox" checked (click)="AddCurrency(currency)">&nbsp;{{currency}}</tr>
+      	<tr *ngIf="!user_currencies.includes(currency)"><input class="btn" type="checkbox" (click)="AddCurrency(currency)">&nbsp;{{currency}}</tr>	
+      </div>
+      <td style="text-align: center; padding-left: 40%;">
+        <!-- Start of Cross Rates Component -->
+      	<div class="tradingview-widget-container" #containerDiv>
+    		<div class="tradingview-widget-container__widget"></div>
+        <!-- End of Cross Rates Component -->
+  		</div>
+      </td>
+    </tr>
+  </table>
 </div>

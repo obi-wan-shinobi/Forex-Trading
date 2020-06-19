@@ -1,33 +1,40 @@
 <div class="heading">
-<hr>
-<h1 style="padding-left: 20px;">Forex Bot</h1>
-<hr>
-<br>
-<div class="big-container" #scrollMe style="overflow: scroll; height: 485px;">
-  <div *ngFor="let message of messages | async">
-  <div class="message" [ngClass]="{'from' : message.sentBy === 'Bot',
-                                    'to': message.sentBy }">
-    <div *ngIf="message.sentBy=='You'; else elseBlock">
-    	<div class="container">
-    		<i class="fa fa-user" style="font-size: 24px;"></i>
-    		<p>{{message.content}}</p>
-    		<span class="time-right">{{message.timestamp | date:"HH:mm"}}</span>
-    	</div>
+    <hr>
+    <h1 style="padding-left: 20px;">Forex Bot</h1>
+    <hr>
+    <br>
+    <!-- Start of Chat Window -->
+    <div class="big-container" #scrollMe style="overflow: scroll; height: 485px;">
+      <div *ngFor="let message of messages | async">
+        <div class="message" [ngClass]="{'from' : message.sentBy === 'Bot',
+                                        'to': message.sentBy }">
+          <!-- Start of Container for "You" -->
+          <div *ngIf="message.sentBy=='You'; else elseBlock">
+        	<div class="container">
+        		<i class="fa fa-user" style="font-size: 24px;"></i>
+        		<p>{{message.content}}</p>
+        		<span class="time-right">{{message.timestamp | date:"HH:mm"}}</span>
+        	</div>
+          </div>
+          <!-- End of Container for "You" -->
+          <!-- Start of Container for "Bot" -->
+          <ng-template #elseBlock>
+        	<div class="container darker">
+        	  <i class="fa fa-television" style="font-size: 24px;"></i>
+    		  <p>{{message.content}}</p>
+    		  <span class="time-left">{{message.timestamp | date:"HH:mm"}}</span>
+    		</div>
+          </ng-template>
+          <!-- End of Container for "Bot" -->
+        </div>
+      </div>
     </div>
-    <ng-template #elseBlock>
-    	<div class="container darker">
-    	  	<i class="fa fa-television" style="font-size: 24px;"></i>
-		  	<p>{{message.content}}</p>
-		  	<span class="time-left">{{message.timestamp | date:"HH:mm"}}</span>
-		</div>
-    </ng-template>
-  </div>
-</div>
-</div>
-<div class="big-container">
-<!-- <label for="nameField">Your Message:</label> -->
-<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" style="width: 95%;" placeholder="Your Message"><br>
-<br>
-<button class="btn" style="margin: 0 auto; display: block;" (click)="sendMessage()"><span>Send</span></button>
-</div>
+    <!-- End of Chat Window -->
+    <!-- Start of the Send button -->
+    <div class="big-container">
+      <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" style="width: 95%;" placeholder="Your Message"><br>
+      <br>
+      <button class="btn" style="margin: 0 auto; display: block;" (click)="sendMessage()"><span>Send</span></button>
+    </div>
+    <!-- End of the Send button -->
 </div>

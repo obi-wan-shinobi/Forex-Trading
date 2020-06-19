@@ -1,54 +1,56 @@
 <div class="heading">
-<hr>
-<h1 style="padding-left: 20px;">Forex Rates</h1>
-<hr>
-<br>
-<div style="padding-left: 20px;">
-  <p>Select Source:
-  <select [(ngModel)]="base" class="btn">
-    <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
-  </select>
-  </p>
+  <hr>
+  <h1 style="padding-left: 20px;">Forex Rates</h1>
+  <hr>
   <br>
-<button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button> &nbsp;&nbsp;
-<button class="btn" type="button" name="button" (click)="getWatchlist()"><span>Show Watchlist</span></button><br><br>
-<!-- <div class="table-data" *ngIf="showData">
-  <div>Date: {{data['date'] | date}}</div>
-  <div>Base: {{data['base']}}</div>
-</div> -->
-<table class="center">
-  <div class="table-data" *ngIf="showData">
-  <tr>
-    <td>
-      <table class="simple">
-        <caption><h3>Rates for {{data['base']}} ({{data['date'] | date}})</h3></caption>
-      <tr>
-        <th>Currency</th>
-        <th>Exchange Rate</th>
-        <th>Add to watch list</th>
-      </tr>
-      <tr *ngFor="let key of keys">
-        <td>{{key}}</td>
-        <td>{{rates[key]}}</td>
-        <td><input class="btn" type="checkbox" (click)="addToWatchlist(key)">Add to watchlist</td>
-      </tr>
-    </table>
-    </td>
-    <td>
-      <table class="simple">
-        <caption><h3>Watchlist</h3></caption>
-        <caption><h3>Base: {{watch['base']}}</h3></caption>
-      <tr>
-        <th>Currency</th>
-        <th>Exchange Rate</th>
-      </tr>
-      <tr *ngFor="let key of watch_keys">
-        <td>{{key}}</td>
-        <td>{{watch_rates[key]}}</td>
-      </tr>
-    </table>
-    </td>
-  </tr>
-  </div>
-</table>
+  <div style="padding-left: 20px;">
+    <p>Select Source:
+    <select [(ngModel)]="base" class="btn">
+      <option value={{key}} *ngFor="let key of keys" style="color: black;"><span>{{key}}</span></option>
+    </select>
+    </p>
+    <br>
+  <button class="btn" type="button" name="button" (click)="getData()"><span>Get rates</span></button> &nbsp;&nbsp;
+  <button class="btn" type="button" name="button" (click)="getWatchlist()"><span>Show Watchlist</span></button><br><br>
+  <!-- Start of Main Table -->
+  <table class="center">
+    <div class="table-data" *ngIf="showData">
+    <tr>
+      <td>
+        <!-- Start of Inner Table for Rates-->
+        <table class="simple">
+          <caption><h3>Rates for {{data['base']}} ({{data['date'] | date}})</h3></caption>
+        <tr>
+          <th>Currency</th>
+          <th>Exchange Rate</th>
+          <th>Add to watch list</th>
+        </tr>
+        <tr *ngFor="let key of keys">
+          <td>{{key}}</td>
+          <td>{{rates[key]}}</td>
+          <td><input class="btn" type="checkbox" (click)="addToWatchlist(key)">Add to watchlist</td>
+        </tr>
+      </table>
+      <!-- End of Inner Table for Rates-->
+      </td>
+      <td>
+        <!-- Start of Inner Table for Watchlist -->
+        <table class="simple">
+          <caption><h3>Watchlist</h3></caption>
+          <caption><h3>Base: {{watch['base']}}</h3></caption>
+        <tr>
+          <th>Currency</th>
+          <th>Exchange Rate</th>
+        </tr>
+        <tr *ngFor="let key of watch_keys">
+          <td>{{key}}</td>
+          <td>{{watch_rates[key]}}</td>
+        </tr>
+      </table>
+      <!-- End of Inner Table for Watchlist -->
+      </td>
+    </tr>
+    </div>
+  </table>
+  <!-- End of Main Table -->
 </div>
