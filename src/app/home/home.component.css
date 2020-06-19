@@ -34,7 +34,7 @@
 }
 .app-picture img{
   width: 100%;
-  margin-top: -500px;
+  margin-top: -400px;
   padding-left: 50px;
   position:relative;
   animation:animateright 1.5s
