@@ -4,13 +4,17 @@
   width: 100%;
   align: center;
 }
-
 .card:hover {
   box-shadow: 0 8px 16px 0 #b5fff4;
 }
-
+a{
+  text-decoration: underline;
+}
 .container {
   padding: 2px 16px;
+}
+p{
+  font-size: 12px;
 }
 ul{
     list-style: none;
@@ -23,7 +27,4 @@ ul{
 	font-size: 14px;
 	color: #19dafa;
 	letter-spacing: 2px;
-}
-select option{
- 	background-color: #42455a;
 }

@@ -1,33 +1,34 @@
 <div class="heading">
-<hr>
-<h1 style="padding-left: 20px;">News</h1>
-<hr>
-<table style="padding-top: 20px; padding-left: 20px;">
-	<tr>
-		<td valign="top" width="200px">
-			<p>Select Source:</p>
+	<hr>
+	<h1 style="padding-left: 20px;">News</h1>
+	<hr>
+	<table style="padding-top: 20px; padding-left: 20px;">
+		<tr>
+			<td valign="top" width="200px">
+				<p>Select Source:</p>
+				<!-- Dropdown list of News Sources -->
 				<select class="btn" [(ngModel)]="selectedSource">
 					<option value="{{source.id}}" *ngFor="let source of mSources" (click)="searchArticles(source.id);"><span>{{source.name}}</span></option>
 				</select>
-				<!-- <button class="btn" type="button" name="button" (click)="searchArticles(selectedSource);">Get Updates</button> -->
-		</td>
-		<td valign="top" style="padding-left: 460px;">
-			<div *ngFor="let article of mArticles">
-				&nbsp;
-			<div class="card"  ng-init="count=count+1" style="width: 50%;" >
-		        	<!-- <img src="{'background-img':'url(../assets/images/'+source.id+'.png)'}"> -->
-		        	<img src="{{article['urlToImage']}}" width="100%">
-		        	<div class="container">
-			            <h3 style="font-weight: bold;">{{article.title}}</h3>
-			            <hr/>
-			            <p>{{article.description}}</p>
-			            <p align="center">
-			            <a href="{{article.url}}" class="small" style="text-decoration: none;">Read Full News</a>
-			        	</p>
-			    	</div>
-			</div>
-			</div>
-		</td>
-	</tr>
-</table>
+			</td>
+			<td valign="top" style="padding-left: 460px;">
+				<div *ngFor="let article of mArticles">
+					&nbsp;
+					<!-- Start of News Card -->
+					<div class="card"  ng-init="count=count+1" style="width: 50%;" >
+			        	<img src="{{article['urlToImage']}}" width="100%">
+			        	<div class="container">
+				            <h3 style="font-weight: bold;">{{article.title}}</h3>
+				            <hr>
+				            <p>{{article.description}}</p>
+				            <p align="center">
+				            <a href="{{article.url}}" class="small">Read Full News</a>
+				        	</p>
+				    	</div>
+					</div>
+					<!-- End of News Card -->
+				</div>
+			</td>
+		</tr>
+	</table>
 </div>
