@@ -24,6 +24,7 @@ export class HistoricalComponent implements OnInit {
       console.log('Historical constructor invoked');
   }
 
+  //Request historical data from the service and sort the dates and create array of dates and prices
   async requestData(base: string = "USD",symbol: string = "INR") {
     this.data = await this.forex.historicalData(base, symbol);
     var dates = Object.keys(this.data.rates);
@@ -43,13 +44,12 @@ export class HistoricalComponent implements OnInit {
       this.history = []
     }
     dates.forEach((key) => {
-      var temp = []
       currency.forEach((curr) => {
         this.history.push(rates[key][curr])
       })
     });
 
-
+    //Create a time series chart
     this.chart = new Chart('canvas', {
       type: 'line',
       data: {
@@ -92,7 +92,8 @@ export class HistoricalComponent implements OnInit {
       await this.requestData();
   }
 
-  async getChart(base, quote) {
+  //Update chart with different base-quote pairs
+  async getChart(base: string, quote: string) {
     await this.requestData(base, quote)
     console.log("Inside getChart"+base,quote)
   }

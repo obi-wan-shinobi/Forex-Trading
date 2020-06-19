@@ -17,8 +17,8 @@ export class TradingPlatformComponent implements OnInit {
 
   public trade = false;
   public option: string;
-  public buyVolume;
-  public sellVolume;
+  public buyVolume: number;
+  public sellVolume: number;
   public sellPrice: number;
   public buyPrice: number;
   public custBuy: string;
@@ -29,12 +29,14 @@ export class TradingPlatformComponent implements OnInit {
     "TRY","SEK","NOK","DKK","ZAR","HKD","SGD","THB","MXN",
     "IDR","KRW","PLN","ISK","KWD","PHP","MYR","INR","TWD",
     "SAR","RUB","ILS"
-  ] ;
+  ] ;                                                                   //available currencies for dropdown
 
   constructor(private trading: TradingService) {
       console.log("Trading Platform constructor called");
-  }
+  }                                                                     //Inject trading service
 
+
+  //Get data from the service and create an object of RealTimeData
   async getRates(base: string = "USD", quote: string = "INR") {
     var data: any;
     var temp:any;
@@ -83,6 +85,7 @@ export class TradingPlatformComponent implements OnInit {
     console.log(this.currencies);
   }
 
+  //Function to buy and sell the currencies
   tradeInit() {
     this.trade = true;
     if(this.option == 'buy') {

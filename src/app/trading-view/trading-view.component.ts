@@ -17,7 +17,7 @@ export class TradingviewComponent implements AfterViewInit {
 
   @ViewChild('containerDiv', {static: true}) containerDiv: ElementRef;
 
-  constructor(private router: Router,  private _elRef: ElementRef,) { }
+  constructor() { }
 
   ngAfterViewInit(){
     new TradingView.widget(

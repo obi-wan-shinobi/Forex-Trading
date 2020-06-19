@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { Router } from "@angular/router";
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-forex-cross-rates',
@@ -18,18 +17,19 @@ export class ForexCrossRatesComponent implements AfterViewInit {
     "TRY","SEK","NOK","DKK","ZAR","HKD","SGD","THB","MXN",
     "IDR","KRW","PLN","ISK","KWD","PHP","MYR","INR","TWD",
     "SAR","RUB","ILS"
-  ] ;
+  ] ;                                                                     //List of all available currencies
 
   public user_currencies = [
     "EUR","USD","JPY","GBP","CHF","AUD","CAD","NZD","CNY","INR"
-  ]
+  ]                                                                       //Predefined list of currencies
 
   @ViewChild('containerDiv', {static: true}) containerDiv: ElementRef;
 
-  constructor( private _elRef: ElementRef, private router: Router ) {
-  }
+  constructor( private _elRef: ElementRef ) {
+  }                                                                       //Inject Element Reference service
 
-  forexCrossRates(user_currencies) {
+  //Function to create widget
+  forexCrossRates(user_currencies: string[]) {
     setTimeout(() => {
       this.widgetId = `${ this.symbol }_fundamentals`;
 
@@ -49,7 +49,7 @@ export class ForexCrossRatesComponent implements AfterViewInit {
       this.settings = {
         "width": 840,
         "height": 400,
-        "currencies": this.user_currencies,
+        "currencies": user_currencies,
         "isTransparent:": true,
         "colorTheme": "dark",
         "locale": "in",
@@ -70,13 +70,16 @@ export class ForexCrossRatesComponent implements AfterViewInit {
     this.forexCrossRates(this.user_currencies)
     console.log(this.containerDiv)
   }
+
+  //Function to remove previous table
   removeForexScriptTag() {
     const forexChartScript = this._elRef.nativeElement.querySelector(`#${this.widgetId}`);
     console.log(forexChartScript);
     forexChartScript.remove();
   }
 
-  AddCurrency(currency) {
+  //Update the table with new currency list
+  AddCurrency(currency: string) {
     console.log(currency)
     if(this.user_currencies.includes(currency)) {
       var index = this.user_currencies.indexOf(currency);

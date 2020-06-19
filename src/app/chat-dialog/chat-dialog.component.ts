@@ -19,6 +19,7 @@ export class ChatDialogComponent implements OnInit, AfterViewChecked {
     console.log("Chat dialog Component called");
   }
 
+  //Start and push messages into the array
   ngOnInit(): void {
     this.messages = this.chat.conversation.asObservable()
       .pipe(
@@ -27,15 +28,18 @@ export class ChatDialogComponent implements OnInit, AfterViewChecked {
     this.scrollToBottom();
   }
 
-  ngAfterViewChecked() {        
-        this.scrollToBottom();        
-    } 
+  ngAfterViewChecked() {
+        this.scrollToBottom();
+  }
+
+  //Scroll down to see latest messages
   scrollToBottom(): void {
         try {
             this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-        } catch(err) { }                 
-    }
+        } catch(err) { }
+  }
 
+  //Function to sent message to the bot
   sendMessage() {
     this.chat.converse(this.formValue);
     this.formValue='';

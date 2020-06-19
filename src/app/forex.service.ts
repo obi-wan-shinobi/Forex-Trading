@@ -10,15 +10,18 @@ export class ForexService {
 
   constructor(private _http: HttpClient) { }
 
+  //Function to get latest rates
   latestRates(base: string = "USD"): Promise<any> {
     //return this._http.get('http://data.fixer.io/api/latest?access_key='+this.api_key+'&base='+base).toPromise();
     return this._http.get('https://api.exchangeratesapi.io/latest?base='+base).toPromise();
   }
 
+  //Function to request specific symbols data for watchlist
   specificSymbols(symbols: string = "USD", base: string="USD"): Promise<any> {
     return this._http.get("https://api.exchangeratesapi.io/latest?base="+base+"&symbols="+symbols).toPromise();
   }
 
+  //Function for historical data to use in charts
   historicalData(base: string="USD", symbols: string="INR"): Promise<any> {
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');

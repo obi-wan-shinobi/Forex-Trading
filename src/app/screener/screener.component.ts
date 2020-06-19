@@ -14,7 +14,7 @@ export class ScreenerComponent implements AfterViewInit {
 
   @ViewChild('containerDiv', {static: true}) containerDiv: ElementRef;
 
-  constructor( private _elRef: ElementRef, private router: Router ) { }
+  constructor() { }
 
   ngAfterViewInit() {
 

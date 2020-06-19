@@ -14,8 +14,8 @@ export class Message {
 })
 export class ChatService {
 
-  readonly token = environment.dialogflow.forexBot;
-  readonly client = new ApiAiClient({accessToken: this.token});
+  readonly token = environment.dialogflow.forexBot;                           //Import token from environment
+  readonly client = new ApiAiClient({accessToken: this.token});               //Create an ApiAiClient
 
   conversation = new BehaviorSubject<Message[]>([]);
 
@@ -25,7 +25,7 @@ export class ChatService {
 
   update(msg: Message){
     this.conversation.next([msg]);
-  }
+  }                                                                 //Update message into message array
 
   converse(msg: string) {
     const userMessage = new Message(msg, 'You', new Date(Date.now()));
@@ -38,5 +38,5 @@ export class ChatService {
           const botMessage = new Message(speech, 'Bot', timestamp);
           this.update(botMessage);
         });
-  }
+  }                                                                           //Function to send and receive messages
 }

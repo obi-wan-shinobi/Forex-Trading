@@ -26,6 +26,7 @@ export class TradingService {
 
   constructor(private _http: HttpClient) { }
 
+  //Get data of bid, ask and other from trading service
   getRealtimeData(from_currency: string = "USD", to_currency: string = "INR"): Promise<any> {
     return this._http.get("https://alpha-vantage.p.rapidapi.com/query?rapidapi-key="+this.api_key+"&function=CURRENCY_EXCHANGE_RATE&to_currency="+to_currency+"&from_currency="+from_currency)
       .toPromise();
