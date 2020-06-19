@@ -10,24 +10,28 @@
 .smallTable, th, td{
 	color: #fff; 
 	text-align: left;
-	border: 1px solid #fff;
-	padding: 20px 0px 0px 20px;
+	padding: 20px 0px 15px 20px;
 }
-.smallTable tr:hover{
+.smallTable th:hover, .smallTable td:hover{
    	text-shadow: 1px 2px #000000;
    	box-shadow: 0 0px 10px #b5fff4;
 }
+.no-hover:hover{
+	text-shadow: none !important;
+	box-shadow: none !important;
+}
 table{
+	table-layout: fixed;
 	border: none;
+	text-align: center;
 }
 table th,td{
 	width: 150px;
 	border: none;
 }
 .bordered{
-	vertical-align: middle;
 	border-collapse: collapse;
-	border: 1px solid #fff !important;
+	border: 1px solid #19dafa !important;
 }
 select{
 	text-align: center;

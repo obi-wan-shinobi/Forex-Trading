@@ -8,7 +8,7 @@
     <td>
     <form #tradingForm="ngForm" style="padding-left: 20px;">
 
-    <div class="">
+    <div>
       <label for="">Base Currency</label>&nbsp;
       <select class="btn" name="baseCurrency" [(ngModel)]="base">
         <option *ngFor="let currency of currencies" value="{{currency}}"><span>{{currency}}</span></option>
@@ -67,17 +67,16 @@
       <th class="bordered" colspan="2">Spread (Pips)</th>
       <td class="bordered">{{realData.Spread}}</td>
     </tr>
-    <tr class="bordered">
-      <td colspan="3">
+    <tr>
+      <td class="no-hover" colspan="3">
         <button class="btn" name="tradeButton" (click)="trade=true" style="margin: 0% 0% 5% 25%;"><span>Click here to trade</span></button>
       </td>
     </tr>
   </table>
     <br>
     </div>
-
   </td>
-  <td>
+  <td style="padding-left: 20px;">
     <div *ngIf="trade">
       <form #tradeVolume="ngForm">
         <select class="btn" name="buy-sell" [(ngModel)]='option' style="width: 400px; height: 40px; text-align: center;">
@@ -98,12 +97,7 @@
               </tr>
               <tr>
                 <td><label for="volume">Volume </label></td>
-                <!-- <td><input type="number" name="volume" [(ngModel)]="buyVolume"></td> -->
-<<<<<<< HEAD
-                <td><input type="range" name="volume" min="0" max="1000000" [(ngModel)]="buyVolume">{{buyVolume}}</td>
-=======
-                <td><input type="range" name="volume" min="0" max="10" [(ngModel)]="buyVolume">{{buyVolume}}</td>
->>>>>>> master
+                <td><input type="text" name="volume" [(ngModel)]="buyVolume"></td>
               </tr>
               <tr>
                 <td><label for="custSell">Sell</label></td>
@@ -133,12 +127,7 @@
             </tr>
             <tr>
               <td><label for="volume">Volume</label></td>
-              <!-- <td><input type="number" name="volume" value="" [(ngModel)]="sellVolume"></td> -->
-<<<<<<< HEAD
-              <td><input type="range" name="volume" min="0" max="1000000" [(ngModel)]="sellVolume">{{sellVolume}}</td>
-=======
-              <td><input type="range" name="volume" min="0" max="10" [(ngModel)]="sellVolume">{{sellVolume}}</td>
->>>>>>> master
+              <td><input type="text" name="volume" value="" [(ngModel)]="sellVolume"></td>
             </tr>
             <tr>
               <td><label for="custSell">Buy</label></td>
