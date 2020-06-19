@@ -52,7 +52,16 @@ export class TradingPlatformComponent implements OnInit {
 
     bid = Number(Number(bid).toFixed(4));
     ask = Number(Number(ask).toFixed(4));
-    const spread = Number(Number((ask-bid)*10000/ask).toFixed(4));
+    var spread = 0;
+    if(to_code == 'JPY') {
+      bid = Number(Number(bid).toFixed(2));
+      ask = Number(Number(ask).toFixed(2));
+      spread = Number(Number((ask-bid)*100/ask).toFixed(2))
+      console.log("Inside JPY:"+spread)
+    }
+    else {
+      spread = Number(Number((ask-bid)*10000/ask).toFixed(4));
+    }
 
     const realData = new RealTimeData(
       from_code,
