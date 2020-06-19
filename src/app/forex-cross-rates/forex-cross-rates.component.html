@@ -5,15 +5,16 @@
 <br>
 <table>
   <tr>
-    <th>Currency</th>
-  </tr>
-  <tr *ngFor="let currency of currencies">
-    <td *ngIf="user_currencies.includes(currency)"><input class="btn" type="checkbox" checked (click)="AddCurrency(currency)">{{currency}}</td>
-    <td *ngIf="!user_currencies.includes(currency)"><input class="btn" type="checkbox" (click)="AddCurrency(currency)">{{currency}}</td>
+    <th style="transform: rotate(270deg);">Currency<hr style="color: #fff;"></th>
+    <div *ngFor="let currency of currencies">
+    	<tr *ngIf="user_currencies.includes(currency)"><input class="btn" type="checkbox" checked (click)="AddCurrency(currency)">&nbsp;{{currency}}</tr>
+    	<tr *ngIf="!user_currencies.includes(currency)"><input class="btn" type="checkbox" (click)="AddCurrency(currency)">&nbsp;{{currency}}</tr>	
+    </div>
+    <td style="text-align: center; padding-left: 40%;">
+    	<div class="tradingview-widget-container" #containerDiv>
+  		<div class="tradingview-widget-container__widget"></div>
+		</div>
+    </td>
   </tr>
 </table>
-<div class="tradingview-widget-container" style="height: 300px;   margin-left: auto;
-  margin-right: auto;" #containerDiv>
-  <div class="tradingview-widget-container__widget"></div>
-</div>
 </div>
