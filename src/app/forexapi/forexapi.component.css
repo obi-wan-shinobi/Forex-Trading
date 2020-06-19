@@ -8,9 +8,6 @@
   height: 34px;
   background-color: #fff;
 }
-.table-data{
-	color: #fff;
-}
 table.center{
 	margin-left: auto;
 	margin-right: auto;
@@ -20,27 +17,17 @@ table .center tr, th, td{
 }
 table .simple{
   border-collapse: collapse;
-  /*border: 1px solid #ddd;*/
 }
-
-  /*table.simple .right {
-    margin-left:auto; 
-  }
-
-table .simple .left {
-    margin-right: auto; 
-  }*/
 table.simple th, td {
   padding: 8px;
   text-align: center;
-  /*border-bottom: 1px solid #ddd;*/
   color: #fff;
 }
 table .simple th{
 	border-bottom: 1px solid #ddd;
 	border-top: 1px solid #ddd;
 }
-table .simple tr:hover {
-	background-color: #19dafa;
-	color: #000;
+.simple tr:hover{
+	background-color: #04abc8;
+  text-shadow: 1px 1px #000;
 }
