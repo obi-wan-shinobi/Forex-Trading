@@ -29,6 +29,7 @@
   color: #919191;
 }
 .app-picture{
+  width: 900px;
   float: right;
 }
 .app-picture img{
