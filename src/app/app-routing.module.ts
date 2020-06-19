@@ -10,20 +10,13 @@ import { ChatDialogComponent } from "./chat-dialog/chat-dialog.component";
 import { AboutComponent } from "./about/about.component";
 import { TradingPlatformComponent } from './trading-platform/trading-platform.component';
 import { HistoricalComponent } from './historical/historical.component';
-import { ChartsComponent } from './charts/charts.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'news', component: NewsComponent},
-  {
-    path: 'charts',
-    component: ChartsComponent,
-    children: [
-      {path: 'technicalanalysis', component: TradingviewComponent},
-      {path: 'historical', component: HistoricalComponent},
-    ]
-  },
+  {path: 'technicalanalysis', component: TradingviewComponent},
+  {path: 'historical', component: HistoricalComponent},
   {path: 'forexcrossrates', component: ForexCrossRatesComponent},
   {path: 'forexapi', component: ForexapiComponent},
   {path: 'screener', component: ScreenerComponent},
@@ -48,6 +41,5 @@ export const routingComponents = [
   ChatDialogComponent,
   AboutComponent,
   TradingPlatformComponent,
-  HistoricalComponent,
-  ChartsComponent
+  HistoricalComponent
 ]
