@@ -1,6 +1,8 @@
-# News
+# Forex Trading
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+
+This is a forex website project that enables users to start up with Forex trading.
 
 ## Development server
 
